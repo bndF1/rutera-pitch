@@ -488,6 +488,39 @@
             border-radius: 2px;
         }
 
+        .lang-switcher {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 9999;
+            display: flex;
+            gap: 6px;
+        }
+
+        .lang-btn {
+            border: 1px solid rgba(201,119,58,0.2);
+            background: var(--surface);
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            padding: 6px 10px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            color: var(--accent-light);
+            border-color: #C9773A;
+            box-shadow: 0 0 10px rgba(201,119,58,0.28);
+        }
+
+        .lang-btn:hover {
+            color: var(--text);
+            border-color: rgba(201,119,58,0.45);
+        }
+
         /* ─── RESPONSIVE ─────────────────────────────────────── */
         @media (max-width: 960px) {
             .pillars { grid-template-columns: 1fr; }
@@ -504,6 +537,12 @@
     </style>
 </head>
 <body>
+
+<div class="lang-switcher" role="group" aria-label="Language selector">
+    <button class="lang-btn" type="button" data-lang="en">EN</button>
+    <button class="lang-btn" type="button" data-lang="es">ES</button>
+    <button class="lang-btn" type="button" data-lang="ca">CA</button>
+</div>
 
 <!-- ═══════════════ HERO ═══════════════════════════════════════ -->
 <header class="hero">
@@ -544,59 +583,59 @@
         <circle class="route-dot end"   cx="1320" cy="282" r="5"/>
     </svg>
 
-    <div class="hero-eyebrow">Bikepacking Platform · Spain First · Global Next · EN / ES / CA</div>
-    <h1 class="hero-title">RUTERA</h1>
-    <p class="hero-subtitle">The living atlas for bikepackers.</p>
-    <p class="hero-domain">Coming to <span>rutera.cc</span></p>
+    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Bikepacking Platform · Spain First · Global Next · EN / ES / CA</div>
+    <h1 class="hero-title" data-i18n="hero.title">RUTERA</h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle">The living atlas for bikepackers.</p>
+    <p class="hero-domain" data-i18n-html="hero.coming">Coming to <span>rutera.cc</span></p>
 
     <div class="hero-scroll" aria-hidden="true">
         <div class="scroll-line"></div>
-        <span class="scroll-label">SCROLL</span>
+        <span class="scroll-label" data-i18n="hero.scroll">SCROLL</span>
     </div>
 </header>
 
 
 <!-- ═══════════════ PROBLEM ════════════════════════════════════ -->
 <section class="wrap">
-    <div class="label">The Problem</div>
-    <h2 class="h2">Planning a bikepacking trip<br>means juggling apps.</h2>
-    <p class="lead">Routes in one place, weather in another, wild camping in a third. You're context-switching between tools that were never designed for this use case.</p>
+    <div class="label" data-i18n="problem.label">The Problem</div>
+    <h2 class="h2" data-i18n-html="problem.h2">Planning a bikepacking trip<br>means juggling apps.</h2>
+    <p class="lead" data-i18n="problem.lead">Routes in one place, weather in another, wild camping in a third. You're context-switching between tools that were never designed for this use case.</p>
 
     <div class="apps-scatter">
-        <div class="app-pill"><span class="app-dot" style="background:#ff6b35"></span>Komoot — routes</div>
-        <div class="app-pill"><span class="app-dot" style="background:#00a9e0"></span>Windy — wind & weather</div>
-        <div class="app-pill"><span class="app-dot" style="background:#ff9500"></span>Park4Night — wild camping</div>
-        <div class="app-pill"><span class="app-dot" style="background:#e74c3c"></span>Warmshowers — hosts</div>
-        <div class="app-pill"><span class="app-dot" style="background:#4285f4"></span>Google Maps — services</div>
-        <div class="app-pill"><span class="app-dot" style="background:#fc4c02"></span>Strava — recording</div>
-        <div class="app-pill"><span class="app-dot" style="background:#3d8ab5"></span>OsmAnd — offline nav</div>
-        <div class="app-pill"><span class="app-dot" style="background:#6a7080"></span>WhatsApp groups — tips</div>
+        <div class="app-pill" data-i18n-html="problem.apps.komoot"><span class="app-dot" style="background:#ff6b35"></span>Komoot — routes</div>
+        <div class="app-pill" data-i18n-html="problem.apps.windy"><span class="app-dot" style="background:#00a9e0"></span>Windy — wind & weather</div>
+        <div class="app-pill" data-i18n-html="problem.apps.park4night"><span class="app-dot" style="background:#ff9500"></span>Park4Night — wild camping</div>
+        <div class="app-pill" data-i18n-html="problem.apps.warmshowers"><span class="app-dot" style="background:#e74c3c"></span>Warmshowers — hosts</div>
+        <div class="app-pill" data-i18n-html="problem.apps.googlemaps"><span class="app-dot" style="background:#4285f4"></span>Google Maps — services</div>
+        <div class="app-pill" data-i18n-html="problem.apps.strava"><span class="app-dot" style="background:#fc4c02"></span>Strava — recording</div>
+        <div class="app-pill" data-i18n-html="problem.apps.osmand"><span class="app-dot" style="background:#3d8ab5"></span>OsmAnd — offline nav</div>
+        <div class="app-pill" data-i18n-html="problem.apps.whatsapp"><span class="app-dot" style="background:#6a7080"></span>WhatsApp groups — tips</div>
     </div>
 
-    <div class="resolution">One platform<br><em>replaces them all.</em></div>
+    <div class="resolution" data-i18n-html="problem.resolution">One platform<br><em>replaces them all.</em></div>
 </section>
 
 
 <!-- ═══════════════ WHAT RUTERA DOES ═══════════════════════════ -->
 <section class="wrap">
-    <div class="label">What Rutera does</div>
-    <h2 class="h2">Built for one thing.<br>Bikepacking.</h2>
+    <div class="label" data-i18n="what.label">What Rutera does</div>
+    <h2 class="h2" data-i18n-html="what.h2">Built for one thing.<br>Bikepacking.</h2>
 
     <div class="pillars">
         <div class="pillar">
             <div class="pillar-num">01</div>
-            <div class="pillar-title">Route Atlas</div>
-            <div class="pillar-body">Curated official routes + community uploads. Surface type by segment — tarmac, gravel, singletrack. GPX download, elevation profiles, filters. Spain first, global next.</div>
+            <div class="pillar-title" data-i18n="what.pillar1.title">Route Atlas</div>
+            <div class="pillar-body" data-i18n="what.pillar1.body">Curated official routes + community uploads. Surface type by segment — tarmac, gravel, singletrack. GPX download, elevation profiles, filters. Spain first, global next.</div>
         </div>
         <div class="pillar">
             <div class="pillar-num">02</div>
-            <div class="pillar-title">Smart Trip Planner</div>
-            <div class="pillar-body">Enter your start date and pace → see the weather forecast for where you'll actually be each day. Auto-split into stages. Overnight spots snapped to the route.</div>
+            <div class="pillar-title" data-i18n="what.pillar2.title">Smart Trip Planner</div>
+            <div class="pillar-body" data-i18n="what.pillar2.body">Enter your start date and pace → see the weather forecast for where you'll actually be each day. Auto-split into stages. Overnight spots snapped to the route.</div>
         </div>
         <div class="pillar">
             <div class="pillar-num">03</div>
-            <div class="pillar-title">Everything Along the Way</div>
-            <div class="pillar-body">Bivouac spots, mountain huts, Warmshowers hosts, water sources, bike shops, supermarkets with opening hours — one layer, one app, no switching.</div>
+            <div class="pillar-title" data-i18n="what.pillar3.title">Everything Along the Way</div>
+            <div class="pillar-body" data-i18n="what.pillar3.body">Bivouac spots, mountain huts, Warmshowers hosts, water sources, bike shops, supermarkets with opening hours — one layer, one app, no switching.</div>
         </div>
     </div>
 </section>
@@ -604,41 +643,41 @@
 
 <!-- ═══════════════ FEATURES ════════════════════════════════════ -->
 <section class="wrap">
-    <div class="label">Key Features</div>
-    <h2 class="h2">What no other app does.</h2>
+    <div class="label" data-i18n="features.label">Key Features</div>
+    <h2 class="h2" data-i18n="features.h2">What no other app does.</h2>
 
     <div class="features-grid">
         <div class="feat">
             <span class="feat-icon">🌦️</span>
-            <div class="feat-title">Route-Aware Weather</div>
-            <div class="feat-body">Forecast for where you'll be, not where you are now. Enter start date + daily pace → weather at each waypoint on the exact day you'll pass through.</div>
-            <span class="feat-badge">NOBODY DOES THIS</span>
+            <div class="feat-title" data-i18n="features.feat1.title">Route-Aware Weather</div>
+            <div class="feat-body" data-i18n="features.feat1.body">Forecast for where you'll be, not where you are now. Enter start date + daily pace → weather at each waypoint on the exact day you'll pass through.</div>
+            <span class="feat-badge" data-i18n="features.feat1.badge">NOBODY DOES THIS</span>
         </div>
         <div class="feat">
             <span class="feat-icon">💨</span>
-            <div class="feat-title">Headwind / Tailwind Analysis</div>
-            <div class="feat-body">Wind direction vs. your travel bearing, segment by segment. See which stages will be a slog and which will push you forward before you even leave.</div>
-            <span class="feat-badge">NOBODY DOES THIS</span>
+            <div class="feat-title" data-i18n="features.feat2.title">Headwind / Tailwind Analysis</div>
+            <div class="feat-body" data-i18n="features.feat2.body">Wind direction vs. your travel bearing, segment by segment. See which stages will be a slog and which will push you forward before you even leave.</div>
+            <span class="feat-badge" data-i18n="features.feat2.badge">NOBODY DOES THIS</span>
         </div>
         <div class="feat">
             <span class="feat-icon">🗺️</span>
-            <div class="feat-title">Surface by Segment</div>
-            <div class="feat-body">Every kilometer labelled: tarmac, gravel, singletrack, or trail. Filter routes by surface mix. Know what tyres to bring before you pack.</div>
+            <div class="feat-title" data-i18n="features.feat3.title">Surface by Segment</div>
+            <div class="feat-body" data-i18n="features.feat3.body">Every kilometer labelled: tarmac, gravel, singletrack, or trail. Filter routes by surface mix. Know what tyres to bring before you pack.</div>
         </div>
         <div class="feat">
             <span class="feat-icon">🌙</span>
-            <div class="feat-title">Overnight Layer</div>
-            <div class="feat-body">All sleep options in one map layer — bivouac spots with legal status, mountain huts, Warmshowers hosts, bikefriendly guesthouses, campsites.</div>
+            <div class="feat-title" data-i18n="features.feat4.title">Overnight Layer</div>
+            <div class="feat-body" data-i18n="features.feat4.body">All sleep options in one map layer — bivouac spots with legal status, mountain huts, Warmshowers hosts, bikefriendly guesthouses, campsites.</div>
         </div>
         <div class="feat">
             <span class="feat-icon">🛒</span>
-            <div class="feat-title">Resupply Planner</div>
-            <div class="feat-body">Supermarkets, bakeries, water sources, bike shops, pharmacies with opening hours. Critical when the next store is 120 km away.</div>
+            <div class="feat-title" data-i18n="features.feat5.title">Resupply Planner</div>
+            <div class="feat-body" data-i18n="features.feat5.body">Supermarkets, bakeries, water sources, bike shops, pharmacies with opening hours. Critical when the next store is 120 km away.</div>
         </div>
         <div class="feat">
             <span class="feat-icon">📐</span>
-            <div class="feat-title">Stage Builder</div>
-            <div class="feat-body">Set km/day → route splits into stages. Daily effort score weights elevation by surface. Rest days recommended when thresholds are exceeded.</div>
+            <div class="feat-title" data-i18n="features.feat6.title">Stage Builder</div>
+            <div class="feat-body" data-i18n="features.feat6.body">Set km/day → route splits into stages. Daily effort score weights elevation by surface. Rest days recommended when thresholds are exceeded.</div>
         </div>
     </div>
 </section>
@@ -646,35 +685,35 @@
 
 <!-- ═══════════════ REPLACEMENT ════════════════════════════════ -->
 <section class="wrap">
-    <div class="label">The All-in-One Promise</div>
-    <h2 class="h2">Delete the stack.<br>Keep one app.</h2>
+    <div class="label" data-i18n="replacement.label">The All-in-One Promise</div>
+    <h2 class="h2" data-i18n-html="replacement.h2">Delete the stack.<br>Keep one app.</h2>
 
     <div class="replace-grid">
         <div>
-            <div class="col-head">What you use today</div>
-            <div class="before-row"><span class="icon-box">🗺</span>Komoot — route planning</div>
-            <div class="before-row"><span class="icon-box">💨</span>Windy — wind forecast</div>
-            <div class="before-row"><span class="icon-box">🌧</span>Weather app — rain &amp; temp</div>
-            <div class="before-row"><span class="icon-box">🏕</span>Park4Night — wild camping</div>
-            <div class="before-row"><span class="icon-box">🚿</span>Warmshowers — bike hosts</div>
-            <div class="before-row"><span class="icon-box">📍</span>Google Maps — services</div>
-            <div class="before-row"><span class="icon-box">📴</span>OsmAnd — offline maps</div>
-            <div class="before-row"><span class="icon-box">💬</span>Facebook groups — tips</div>
+            <div class="col-head" data-i18n="replacement.colToday">What you use today</div>
+            <div class="before-row" data-i18n-html="replacement.before1"><span class="icon-box">🗺</span>Komoot — route planning</div>
+            <div class="before-row" data-i18n-html="replacement.before2"><span class="icon-box">💨</span>Windy — wind forecast</div>
+            <div class="before-row" data-i18n-html="replacement.before3"><span class="icon-box">🌧</span>Weather app — rain &amp; temp</div>
+            <div class="before-row" data-i18n-html="replacement.before4"><span class="icon-box">🏕</span>Park4Night — wild camping</div>
+            <div class="before-row" data-i18n-html="replacement.before5"><span class="icon-box">🚿</span>Warmshowers — bike hosts</div>
+            <div class="before-row" data-i18n-html="replacement.before6"><span class="icon-box">📍</span>Google Maps — services</div>
+            <div class="before-row" data-i18n-html="replacement.before7"><span class="icon-box">📴</span>OsmAnd — offline maps</div>
+            <div class="before-row" data-i18n-html="replacement.before8"><span class="icon-box">💬</span>Facebook groups — tips</div>
         </div>
 
         <div class="arrow-mid">→</div>
 
         <div>
             <div class="after-col">
-                <div class="col-head" style="color:var(--accent); border-color:rgba(201,119,58,0.25);">Rutera</div>
-                <div class="after-row"><span class="check">✓</span> Route atlas — official + community routes</div>
-                <div class="after-row"><span class="check">✓</span> Route-aware wind + headwind analysis</div>
-                <div class="after-row"><span class="check">✓</span> ETA-based rain &amp; temperature forecast</div>
-                <div class="after-row"><span class="check">✓</span> Wild camping layer with legal status</div>
-                <div class="after-row"><span class="check">✓</span> Bikefriendly host network</div>
-                <div class="after-row"><span class="check">✓</span> Services: shops, water, mechanics, ATMs</div>
-                <div class="after-row"><span class="check">✓</span> Offline maps + GPS navigation</div>
-                <div class="after-row"><span class="check">✓</span> Community conditions + local tips</div>
+                <div class="col-head" style="color:var(--accent); border-color:rgba(201,119,58,0.25);" data-i18n="replacement.afterCol">Rutera</div>
+                <div class="after-row" data-i18n-html="replacement.after1"><span class="check">✓</span> Route atlas — official + community routes</div>
+                <div class="after-row" data-i18n-html="replacement.after2"><span class="check">✓</span> Route-aware wind + headwind analysis</div>
+                <div class="after-row" data-i18n-html="replacement.after3"><span class="check">✓</span> ETA-based rain &amp; temperature forecast</div>
+                <div class="after-row" data-i18n-html="replacement.after4"><span class="check">✓</span> Wild camping layer with legal status</div>
+                <div class="after-row" data-i18n-html="replacement.after5"><span class="check">✓</span> Bikefriendly host network</div>
+                <div class="after-row" data-i18n-html="replacement.after6"><span class="check">✓</span> Services: shops, water, mechanics, ATMs</div>
+                <div class="after-row" data-i18n-html="replacement.after7"><span class="check">✓</span> Offline maps + GPS navigation</div>
+                <div class="after-row" data-i18n-html="replacement.after8"><span class="check">✓</span> Community conditions + local tips</div>
             </div>
         </div>
     </div>
@@ -683,39 +722,39 @@
 
 <!-- ═══════════════ ROADMAP ═════════════════════════════════════ -->
 <section class="wrap">
-    <div class="label">Roadmap</div>
-    <h2 class="h2">Built in phases.<br>Starting with Spain.</h2>
+    <div class="label" data-i18n="roadmap.label">Roadmap</div>
+    <h2 class="h2" data-i18n-html="roadmap.h2">Built in phases.<br>Starting with Spain.</h2>
 
     <div class="phases">
         <div class="phase now">
-            <div class="phase-num">PHASE 0</div>
-            <div class="phase-name">Foundation</div>
-            <div class="phase-desc">Infra, base map, 5–10 curated routes, brand, landing page</div>
+            <div class="phase-num" data-i18n="roadmap.phase0.num">PHASE 0</div>
+            <div class="phase-name" data-i18n="roadmap.phase0.name">Foundation</div>
+            <div class="phase-desc" data-i18n="roadmap.phase0.desc">Infra, base map, 5–10 curated routes, brand, landing page</div>
         </div>
         <div class="phase">
-            <div class="phase-num">PHASE 1</div>
-            <div class="phase-name">MVP Spain</div>
-            <div class="phase-desc">Interactive map, GPX download, filters, responsive PWA</div>
+            <div class="phase-num" data-i18n="roadmap.phase1.num">PHASE 1</div>
+            <div class="phase-name" data-i18n="roadmap.phase1.name">MVP Spain</div>
+            <div class="phase-desc" data-i18n="roadmap.phase1.desc">Interactive map, GPX download, filters, responsive PWA</div>
         </div>
         <div class="phase">
-            <div class="phase-num">PHASE 2</div>
-            <div class="phase-name">Community</div>
-            <div class="phase-desc">Auth, user uploads, ratings, conditions reports</div>
+            <div class="phase-num" data-i18n="roadmap.phase2.num">PHASE 2</div>
+            <div class="phase-name" data-i18n="roadmap.phase2.name">Community</div>
+            <div class="phase-desc" data-i18n="roadmap.phase2.desc">Auth, user uploads, ratings, conditions reports</div>
         </div>
         <div class="phase">
-            <div class="phase-num">PHASE 3</div>
-            <div class="phase-name">Smart Layers</div>
-            <div class="phase-desc">Weather intelligence, stage planner, overnight, resupply</div>
+            <div class="phase-num" data-i18n="roadmap.phase3.num">PHASE 3</div>
+            <div class="phase-name" data-i18n="roadmap.phase3.name">Smart Layers</div>
+            <div class="phase-desc" data-i18n="roadmap.phase3.desc">Weather intelligence, stage planner, overnight, resupply</div>
         </div>
         <div class="phase">
-            <div class="phase-num">PHASE 4</div>
-            <div class="phase-name">Native App</div>
-            <div class="phase-desc">iOS + Android, offline maps, GPS navigation, Garmin sync</div>
+            <div class="phase-num" data-i18n="roadmap.phase4.num">PHASE 4</div>
+            <div class="phase-name" data-i18n="roadmap.phase4.name">Native App</div>
+            <div class="phase-desc" data-i18n="roadmap.phase4.desc">iOS + Android, offline maps, GPS navigation, Garmin sync</div>
         </div>
         <div class="phase">
-            <div class="phase-num">PHASE 5</div>
-            <div class="phase-name">Global</div>
-            <div class="phase-desc">Beyond Spain, i18n, public API, partner integrations</div>
+            <div class="phase-num" data-i18n="roadmap.phase5.num">PHASE 5</div>
+            <div class="phase-name" data-i18n="roadmap.phase5.name">Global</div>
+            <div class="phase-desc" data-i18n="roadmap.phase5.desc">Beyond Spain, i18n, public API, partner integrations</div>
         </div>
     </div>
 </section>
@@ -723,16 +762,363 @@
 
 <!-- ═══════════════ FOOTER ══════════════════════════════════════ -->
 <footer class="footer">
-    <span class="footer-logo">Rutera</span>
-    <div class="footer-tagline">The living atlas for bikepackers.</div>
-    <div class="footer-url">rutera.cc</div>
-    <div class="footer-meta">Spain · 2026 · Private — Not yet launched</div>
+    <span class="footer-logo" data-i18n="footer.logo">Rutera</span>
+    <div class="footer-tagline" data-i18n="footer.tagline">The living atlas for bikepackers.</div>
+    <div class="footer-url" data-i18n="footer.url">rutera.cc</div>
+    <div class="footer-meta" data-i18n="footer.meta">Spain · 2026 · Private — Not yet launched</div>
     <div class="footer-langs">
-        <span>EN</span>
-        <span>ES</span>
-        <span>CA · VAL</span>
+        <span data-i18n="footer.langEn">EN</span>
+        <span data-i18n="footer.langEs">ES</span>
+        <span data-i18n="footer.langCa">CA · VAL</span>
     </div>
 </footer>
+
+<script>
+const translations = {
+  en: {
+    title: `Rutera — The Living Atlas for Bikepackers`,
+    "hero.eyebrow": `Bikepacking Platform · Spain First · Global Next · EN / ES / CA`,
+    "hero.title": `RUTERA`,
+    "hero.subtitle": `The living atlas for bikepackers.`,
+    "hero.coming": `Coming to <span>rutera.cc</span>`,
+    "hero.scroll": `SCROLL`,
+
+    "problem.label": `The Problem`,
+    "problem.h2": `Planning a bikepacking trip<br>means juggling apps.`,
+    "problem.lead": `Routes in one place, weather in another, wild camping in a third. You're context-switching between tools that were never designed for this use case.`,
+    "problem.resolution": `One platform<br><em>replaces them all.</em>`,
+    "problem.apps.komoot": `<span class="app-dot" style="background:#ff6b35"></span>Komoot — routes`,
+    "problem.apps.windy": `<span class="app-dot" style="background:#00a9e0"></span>Windy — wind & weather`,
+    "problem.apps.park4night": `<span class="app-dot" style="background:#ff9500"></span>Park4Night — wild camping`,
+    "problem.apps.warmshowers": `<span class="app-dot" style="background:#e74c3c"></span>Warmshowers — hosts`,
+    "problem.apps.googlemaps": `<span class="app-dot" style="background:#4285f4"></span>Google Maps — services`,
+    "problem.apps.strava": `<span class="app-dot" style="background:#fc4c02"></span>Strava — recording`,
+    "problem.apps.osmand": `<span class="app-dot" style="background:#3d8ab5"></span>OsmAnd — offline nav`,
+    "problem.apps.whatsapp": `<span class="app-dot" style="background:#6a7080"></span>WhatsApp groups — tips`,
+
+    "what.label": `What Rutera does`,
+    "what.h2": `Built for one thing.<br>Bikepacking.`,
+    "what.pillar1.title": `Route Atlas`,
+    "what.pillar1.body": `Curated official routes + community uploads. Surface type by segment — tarmac, gravel, singletrack. GPX download, elevation profiles, filters. Spain first, global next.`,
+    "what.pillar2.title": `Smart Trip Planner`,
+    "what.pillar2.body": `Enter your start date and pace → see the weather forecast for where you'll actually be each day. Auto-split into stages. Overnight spots snapped to the route.`,
+    "what.pillar3.title": `Everything Along the Way`,
+    "what.pillar3.body": `Bivouac spots, mountain huts, Warmshowers hosts, water sources, bike shops, supermarkets with opening hours — one layer, one app, no switching.`,
+
+    "features.label": `Key Features`,
+    "features.h2": `What no other app does.`,
+    "features.feat1.title": `Route-Aware Weather`,
+    "features.feat1.body": `Forecast for where you'll be, not where you are now. Enter start date + daily pace → weather at each waypoint on the exact day you'll pass through.`,
+    "features.feat1.badge": `NOBODY DOES THIS`,
+    "features.feat2.title": `Headwind / Tailwind Analysis`,
+    "features.feat2.body": `Wind direction vs. your travel bearing, segment by segment. See which stages will be a slog and which will push you forward before you even leave.`,
+    "features.feat2.badge": `NOBODY DOES THIS`,
+    "features.feat3.title": `Surface by Segment`,
+    "features.feat3.body": `Every kilometer labelled: tarmac, gravel, singletrack, or trail. Filter routes by surface mix. Know what tyres to bring before you pack.`,
+    "features.feat4.title": `Overnight Layer`,
+    "features.feat4.body": `All sleep options in one map layer — bivouac spots with legal status, mountain huts, Warmshowers hosts, bikefriendly guesthouses, campsites.`,
+    "features.feat5.title": `Resupply Planner`,
+    "features.feat5.body": `Supermarkets, bakeries, water sources, bike shops, pharmacies with opening hours. Critical when the next store is 120 km away.`,
+    "features.feat6.title": `Stage Builder`,
+    "features.feat6.body": `Set km/day → route splits into stages. Daily effort score weights elevation by surface. Rest days recommended when thresholds are exceeded.`,
+
+    "replacement.label": `The All-in-One Promise`,
+    "replacement.h2": `Delete the stack.<br>Keep one app.`,
+    "replacement.colToday": `What you use today`,
+    "replacement.before1": `<span class="icon-box">🗺</span>Komoot — route planning`,
+    "replacement.before2": `<span class="icon-box">💨</span>Windy — wind forecast`,
+    "replacement.before3": `<span class="icon-box">🌧</span>Weather app — rain & temp`,
+    "replacement.before4": `<span class="icon-box">🏕</span>Park4Night — wild camping`,
+    "replacement.before5": `<span class="icon-box">🚿</span>Warmshowers — bike hosts`,
+    "replacement.before6": `<span class="icon-box">📍</span>Google Maps — services`,
+    "replacement.before7": `<span class="icon-box">📴</span>OsmAnd — offline maps`,
+    "replacement.before8": `<span class="icon-box">💬</span>Facebook groups — tips`,
+    "replacement.after1": `<span class="check">✓</span> Route atlas — official + community routes`,
+    "replacement.after2": `<span class="check">✓</span> Route-aware wind + headwind analysis`,
+    "replacement.after3": `<span class="check">✓</span> ETA-based rain & temperature forecast`,
+    "replacement.after4": `<span class="check">✓</span> Wild camping layer with legal status`,
+    "replacement.after5": `<span class="check">✓</span> Bikefriendly host network`,
+    "replacement.after6": `<span class="check">✓</span> Services: shops, water, mechanics, ATMs`,
+    "replacement.after7": `<span class="check">✓</span> Offline maps + GPS navigation`,
+    "replacement.after8": `<span class="check">✓</span> Community conditions + local tips`,
+
+    "roadmap.label": `Roadmap`,
+    "roadmap.h2": `Built in phases.<br>Starting with Spain.`,
+    "roadmap.phase0.num": `PHASE 0`,
+    "roadmap.phase0.name": `Foundation`,
+    "roadmap.phase0.desc": `Infra, base map, 5–10 curated routes, brand, landing page`,
+    "roadmap.phase1.num": `PHASE 1`,
+    "roadmap.phase1.name": `MVP Spain`,
+    "roadmap.phase1.desc": `Interactive map, GPX download, filters, responsive PWA`,
+    "roadmap.phase2.num": `PHASE 2`,
+    "roadmap.phase2.name": `Community`,
+    "roadmap.phase2.desc": `Auth, user uploads, ratings, conditions reports`,
+    "roadmap.phase3.num": `PHASE 3`,
+    "roadmap.phase3.name": `Smart Layers`,
+    "roadmap.phase3.desc": `Weather intelligence, stage planner, overnight, resupply`,
+    "roadmap.phase4.num": `PHASE 4`,
+    "roadmap.phase4.name": `Native App`,
+    "roadmap.phase4.desc": `iOS + Android, offline maps, GPS navigation, Garmin sync`,
+    "roadmap.phase5.num": `PHASE 5`,
+    "roadmap.phase5.name": `Global`,
+    "roadmap.phase5.desc": `Beyond Spain, i18n, public API, partner integrations`,
+
+    
+    "replacement.afterCol": `Rutera`,
+    "footer.logo": `Rutera`,
+    "footer.url": `rutera.cc`,
+    "footer.langEn": `EN`,
+    "footer.langEs": `ES`,
+    "footer.langCa": `CA · VAL`,
+"footer.tagline": `The living atlas for bikepackers.`,
+    "footer.meta": `Spain · 2026 · Private — Not yet launched`
+  },
+  es: {
+    title: `Rutera — El Atlas Vivo para Bikepackers`,
+    "hero.eyebrow": `Plataforma de Bikepacking · Comienza en España · Expansión Global · EN / ES / CA`,
+    "hero.title": `RUTERA`,
+    "hero.subtitle": `El atlas vivo para bikepackers.`,
+    "hero.coming": `Próximamente en <span>rutera.cc</span>`,
+    "hero.scroll": `SCROLL`,
+
+    "problem.label": `El Problema`,
+    "problem.h2": `Planificar una ruta de bikepacking<br>significa malabarear con apps.`,
+    "problem.lead": `Las rutas en un sitio, el tiempo en otro, el camping salvaje en un tercero. Saltas entre herramientas que nunca fueron diseñadas para este uso.`,
+    "problem.resolution": `Una plataforma<br><em>las reemplaza todas.</em>`,
+    "problem.apps.komoot": `<span class="app-dot" style="background:#ff6b35"></span>Komoot — rutas`,
+    "problem.apps.windy": `<span class="app-dot" style="background:#00a9e0"></span>Windy — viento y tiempo`,
+    "problem.apps.park4night": `<span class="app-dot" style="background:#ff9500"></span>Park4Night — camping salvaje`,
+    "problem.apps.warmshowers": `<span class="app-dot" style="background:#e74c3c"></span>Warmshowers — anfitriones`,
+    "problem.apps.googlemaps": `<span class="app-dot" style="background:#4285f4"></span>Google Maps — servicios`,
+    "problem.apps.strava": `<span class="app-dot" style="background:#fc4c02"></span>Strava — registro`,
+    "problem.apps.osmand": `<span class="app-dot" style="background:#3d8ab5"></span>OsmAnd — navegación offline`,
+    "problem.apps.whatsapp": `<span class="app-dot" style="background:#6a7080"></span>Grupos de WhatsApp — consejos`,
+
+    "what.label": `Qué hace Rutera`,
+    "what.h2": `Construida para una cosa.<br>Bikepacking.`,
+    "what.pillar1.title": `Atlas de Rutas`,
+    "what.pillar1.body": `Rutas oficiales curadas + subidas de la comunidad. Tipo de firme por tramo — asfalto, grava, singletrack. Descarga GPX, perfiles de altitud, filtros. España primero, después el mundo.`,
+    "what.pillar2.title": `Planificador Inteligente`,
+    "what.pillar2.body": `Introduce tu fecha de inicio y ritmo → ve la previsión para donde estarás cada día. División automática en etapas. Puntos de pernocta sobre la ruta.`,
+    "what.pillar3.title": `Todo en el Camino`,
+    "what.pillar3.body": `Vivacs, refugios de montaña, anfitriones Warmshowers, fuentes de agua, tiendas de bicicletas, supermercados con horarios — una capa, una app, sin cambiar.`,
+
+    "features.label": `Funcionalidades Clave`,
+    "features.h2": `Lo que ninguna otra app hace.`,
+    "features.feat1.title": `Meteorología por Ruta`,
+    "features.feat1.body": `Previsión para donde estarás, no donde estás ahora. Introduce fecha + km/día → tiempo en cada punto el día exacto que pasarás.`,
+    "features.feat1.badge": `NADIE HACE ESTO`,
+    "features.feat2.title": `Análisis Viento en Contra / a Favor`,
+    "features.feat2.body": `Dirección del viento vs. tu rumbo de viaje, tramo por tramo. Ve qué etapas serán un calvario y cuáles te empujarán antes de salir.`,
+    "features.feat2.badge": `NADIE HACE ESTO`,
+    "features.feat3.title": `Firme por Tramo`,
+    "features.feat3.body": `Cada kilómetro etiquetado: asfalto, grava, singletrack o camino. Filtra rutas por tipo de firme. Sabe qué neumáticos llevar antes de empacar.`,
+    "features.feat4.title": `Capa de Pernocta`,
+    "features.feat4.body": `Todas las opciones para dormir en una capa — vivacs con estado legal, refugios, anfitriones Warmshowers, alojamientos bike-friendly, campings.`,
+    "features.feat5.title": `Planificador de Avituallamiento`,
+    "features.feat5.body": `Supermercados, panaderías, fuentes de agua, tiendas de bicicletas, farmacias con horarios. Crucial cuando la próxima tienda está a 120 km.`,
+    "features.feat6.title": `Constructor de Etapas`,
+    "features.feat6.body": `Establece km/día → la ruta se divide en etapas. El esfuerzo diario pondera el desnivel por tipo de firme. Días de descanso recomendados al superar umbrales.`,
+
+    "replacement.label": `La Promesa Todo en Uno`,
+    "replacement.h2": `Elimina el stack.<br>Quédate con una app.`,
+    "replacement.colToday": `Lo que usas hoy`,
+    "replacement.before1": `<span class="icon-box">🗺</span>Komoot — route planning`,
+    "replacement.before2": `<span class="icon-box">💨</span>Windy — wind forecast`,
+    "replacement.before3": `<span class="icon-box">🌧</span>Weather app — rain & temp`,
+    "replacement.before4": `<span class="icon-box">🏕</span>Park4Night — wild camping`,
+    "replacement.before5": `<span class="icon-box">🚿</span>Warmshowers — bike hosts`,
+    "replacement.before6": `<span class="icon-box">📍</span>Google Maps — services`,
+    "replacement.before7": `<span class="icon-box">📴</span>OsmAnd — offline maps`,
+    "replacement.before8": `<span class="icon-box">💬</span>Facebook groups — tips`,
+    "replacement.after1": `<span class="check">✓</span> Atlas de rutas — oficiales + comunidad`,
+    "replacement.after2": `<span class="check">✓</span> Viento por ruta + análisis de viento en contra`,
+    "replacement.after3": `<span class="check">✓</span> Previsión de lluvia y temperatura según ETA`,
+    "replacement.after4": `<span class="check">✓</span> Capa de camping salvaje con estado legal`,
+    "replacement.after5": `<span class="check">✓</span> Red de anfitriones bike-friendly`,
+    "replacement.after6": `<span class="check">✓</span> Servicios: tiendas, agua, mecánicos, cajeros`,
+    "replacement.after7": `<span class="check">✓</span> Mapas offline + navegación GPS`,
+    "replacement.after8": `<span class="check">✓</span> Estado de la ruta + consejos locales`,
+
+    "roadmap.label": `Hoja de Ruta`,
+    "roadmap.h2": `Construida por fases.<br>Empezando por España.`,
+    "roadmap.phase0.num": `FASE 0`,
+    "roadmap.phase0.name": `Fundación`,
+    "roadmap.phase0.desc": `Infra, mapa base, 5–10 rutas curadas, marca, landing page`,
+    "roadmap.phase1.num": `FASE 1`,
+    "roadmap.phase1.name": `MVP España`,
+    "roadmap.phase1.desc": `Mapa interactivo, descarga GPX, filtros, PWA responsive`,
+    "roadmap.phase2.num": `FASE 2`,
+    "roadmap.phase2.name": `Comunidad`,
+    "roadmap.phase2.desc": `Auth, subidas de usuarios, valoraciones, reportes de estado`,
+    "roadmap.phase3.num": `FASE 3`,
+    "roadmap.phase3.name": `Capas Inteligentes`,
+    "roadmap.phase3.desc": `Meteorología inteligente, planificador de etapas, pernocta, avituallamiento`,
+    "roadmap.phase4.num": `FASE 4`,
+    "roadmap.phase4.name": `App Nativa`,
+    "roadmap.phase4.desc": `iOS + Android, mapas offline, navegación GPS, sincronización Garmin`,
+    "roadmap.phase5.num": `FASE 5`,
+    "roadmap.phase5.name": `Global`,
+    "roadmap.phase5.desc": `Más allá de España, i18n, API pública, integraciones con partners`,
+
+    
+    "replacement.afterCol": `Rutera`,
+    "footer.logo": `Rutera`,
+    "footer.url": `rutera.cc`,
+    "footer.langEn": `EN`,
+    "footer.langEs": `ES`,
+    "footer.langCa": `CA · VAL`,
+"footer.tagline": `El atlas vivo para bikepackers.`,
+    "footer.meta": `España · 2026 · Privado — Aún no lanzado`
+  },
+  ca: {
+    title: `Rutera — L'Atles Viu per a Bikepackers`,
+    "hero.eyebrow": `Plataforma de Bikepacking · Comença a Espanya · Expansió Global · EN / ES / CA`,
+    "hero.title": `RUTERA`,
+    "hero.subtitle": `L'atles viu per a bikepackers.`,
+    "hero.coming": `Pròximament a <span>rutera.cc</span>`,
+    "hero.scroll": `SCROLL`,
+
+    "problem.label": `El Problema`,
+    "problem.h2": `Planificar una ruta de bikepacking<br>significa fer malabars amb apps.`,
+    "problem.lead": `Les rutes en un lloc, el temps en un altre, el càmping salvatge en un tercer. Saltes entre eines que mai van ser dissenyades per a aquest ús.`,
+    "problem.resolution": `Una plataforma<br><em>les substitueix totes.</em>`,
+    "problem.apps.komoot": `<span class="app-dot" style="background:#ff6b35"></span>Komoot — rutes`,
+    "problem.apps.windy": `<span class="app-dot" style="background:#00a9e0"></span>Windy — vent i oratge`,
+    "problem.apps.park4night": `<span class="app-dot" style="background:#ff9500"></span>Park4Night — càmping salvatge`,
+    "problem.apps.warmshowers": `<span class="app-dot" style="background:#e74c3c"></span>Warmshowers — amfitrions`,
+    "problem.apps.googlemaps": `<span class="app-dot" style="background:#4285f4"></span>Google Maps — serveis`,
+    "problem.apps.strava": `<span class="app-dot" style="background:#fc4c02"></span>Strava — registre`,
+    "problem.apps.osmand": `<span class="app-dot" style="background:#3d8ab5"></span>OsmAnd — navegació offline`,
+    "problem.apps.whatsapp": `<span class="app-dot" style="background:#6a7080"></span>Grups de WhatsApp — consells`,
+
+    "what.label": `Què fa Rutera`,
+    "what.h2": `Construïda per a una cosa.<br>Bikepacking.`,
+    "what.pillar1.title": `Atles de Rutes`,
+    "what.pillar1.body": `Rutes oficials curades + pujades de la comunitat. Tipus de ferm per tram — asfalt, grava, singletrack. Descàrrega GPX, perfils d'altitud, filtres. Espanya primer, després el món.`,
+    "what.pillar2.title": `Planificador Intel·ligent`,
+    "what.pillar2.body": `Introdueix la data d'inici i el ritme → veu la previsió per on estaràs cada dia. Divisió automàtica en etapes. Punts de pernoctació sobre la ruta.`,
+    "what.pillar3.title": `Tot al Camí`,
+    "what.pillar3.body": `Bivacs, refugis de muntanya, amfitrions Warmshowers, fonts d'aigua, botigues de bicicletes, supermercats amb horaris — una capa, una app, sense canviar.`,
+
+    "features.label": `Funcionalitats Clau`,
+    "features.h2": `El que cap altra app fa.`,
+    "features.feat1.title": `Meteorologia per Ruta`,
+    "features.feat1.body": `Previsió per on estaràs, no on ets ara. Introdueix data + km/dia → temps en cada punt el dia exacte que hi passaràs.`,
+    "features.feat1.badge": `NINGÚ FA AÇÒ`,
+    "features.feat2.title": `Anàlisi Vent en Contra / a Favor`,
+    "features.feat2.body": `Direcció del vent vs. el teu rumb de viatge, tram per tram. Veu quines etapes seran un suplici i quines et portaran cap endavant abans de sortir.`,
+    "features.feat2.badge": `NINGÚ FA AÇÒ`,
+    "features.feat3.title": `Ferm per Tram`,
+    "features.feat3.body": `Cada quilòmetre etiquetat: asfalt, grava, singletrack o camí. Filtra rutes per tipus de ferm. Sap quins pneumàtics portar abans d'embalar.`,
+    "features.feat4.title": `Capa de Pernoctació`,
+    "features.feat4.body": `Totes les opcions per dormir en una capa — bivacs amb estat legal, refugis, amfitrions Warmshowers, allotjaments bike-friendly, càmpings.`,
+    "features.feat5.title": `Planificador de Provisions`,
+    "features.feat5.body": `Supermercats, forns, fonts d'aigua, botigues de bicicletes, farmàcies amb horaris. Crucial quan la pròxima botiga és a 120 km.`,
+    "features.feat6.title": `Constructor d'Etapes`,
+    "features.feat6.body": `Estableix km/dia → la ruta es divideix en etapes. L'esforç diari pondera el desnivell per tipus de ferm. Dies de descans recomanats en superar llindars.`,
+
+    "replacement.label": `La Promesa Tot en Un`,
+    "replacement.h2": `Elimina l'stack.<br>Queda't amb una app.`,
+    "replacement.colToday": `El que uses avui`,
+    "replacement.before1": `<span class="icon-box">🗺</span>Komoot — route planning`,
+    "replacement.before2": `<span class="icon-box">💨</span>Windy — wind forecast`,
+    "replacement.before3": `<span class="icon-box">🌧</span>Weather app — rain & temp`,
+    "replacement.before4": `<span class="icon-box">🏕</span>Park4Night — wild camping`,
+    "replacement.before5": `<span class="icon-box">🚿</span>Warmshowers — bike hosts`,
+    "replacement.before6": `<span class="icon-box">📍</span>Google Maps — services`,
+    "replacement.before7": `<span class="icon-box">📴</span>OsmAnd — offline maps`,
+    "replacement.before8": `<span class="icon-box">💬</span>Facebook groups — tips`,
+    "replacement.after1": `<span class="check">✓</span> Atles de rutes — oficials + comunitat`,
+    "replacement.after2": `<span class="check">✓</span> Vent per ruta + anàlisi de vent en contra`,
+    "replacement.after3": `<span class="check">✓</span> Previsió de pluja i temperatura per ETA`,
+    "replacement.after4": `<span class="check">✓</span> Capa de càmping salvatge amb estat legal`,
+    "replacement.after5": `<span class="check">✓</span> Xarxa d'amfitrions bike-friendly`,
+    "replacement.after6": `<span class="check">✓</span> Serveis: botigues, aigua, mecànics, caixers`,
+    "replacement.after7": `<span class="check">✓</span> Mapes offline + navegació GPS`,
+    "replacement.after8": `<span class="check">✓</span> Estat de la ruta + consells locals`,
+
+    "roadmap.label": `Full de Ruta`,
+    "roadmap.h2": `Construïda per fases.<br>Començant per Espanya.`,
+    "roadmap.phase0.num": `FASE 0`,
+    "roadmap.phase0.name": `Fonamentació`,
+    "roadmap.phase0.desc": `Infra, mapa base, 5–10 rutes curades, marca, landing page`,
+    "roadmap.phase1.num": `FASE 1`,
+    "roadmap.phase1.name": `MVP Espanya`,
+    "roadmap.phase1.desc": `Mapa interactiu, descàrrega GPX, filtres, PWA responsive`,
+    "roadmap.phase2.num": `FASE 2`,
+    "roadmap.phase2.name": `Comunitat`,
+    "roadmap.phase2.desc": `Auth, pujades d'usuaris, valoracions, informes d'estat`,
+    "roadmap.phase3.num": `FASE 3`,
+    "roadmap.phase3.name": `Capes Intel·ligents`,
+    "roadmap.phase3.desc": `Meteorologia intel·ligent, planificador d'etapes, pernoctació, provisions`,
+    "roadmap.phase4.num": `FASE 4`,
+    "roadmap.phase4.name": `App Nativa`,
+    "roadmap.phase4.desc": `iOS + Android, mapes offline, navegació GPS, sincronització Garmin`,
+    "roadmap.phase5.num": `FASE 5`,
+    "roadmap.phase5.name": `Global`,
+    "roadmap.phase5.desc": `Més enllà d'Espanya, i18n, API pública, integracions amb partners`,
+
+    
+    "replacement.afterCol": `Rutera`,
+    "footer.logo": `Rutera`,
+    "footer.url": `rutera.cc`,
+    "footer.langEn": `EN`,
+    "footer.langEs": `ES`,
+    "footer.langCa": `CA · VAL`,
+"footer.tagline": `L'atles viu per a bikepackers.`,
+    "footer.meta": `Espanya · 2026 · Privat — Encara no llançat`
+  }
+};
+
+const STORAGE_KEY = 'rutera-language';
+
+function setLanguage(lang) {
+  const selected = translations[lang] ? lang : 'en';
+  const dict = translations[selected];
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+      el.textContent = dict[key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-html');
+    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  document.title = dict.title;
+  document.documentElement.lang = selected;
+
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    const active = btn.dataset.lang === selected;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', String(active));
+  });
+
+  localStorage.setItem(STORAGE_KEY, selected);
+}
+
+function detectLanguage() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved && translations[saved]) return saved;
+
+  const browser = (navigator.language || 'en').toLowerCase();
+  if (browser.startsWith('es')) return 'es';
+  if (browser.startsWith('ca') || browser.startsWith('val')) return 'ca';
+  return 'en';
+}
+
+document.querySelectorAll('.lang-btn').forEach((btn) => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
+setLanguage(detectLanguage());
+</script>
 
 </body>
 </html>
