@@ -470,6 +470,24 @@
             letter-spacing: 0.2em;
         }
 
+        .footer-langs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .footer-langs span {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: #1E2830;
+            background: rgba(201,119,58,0.12);
+            border: 1px solid rgba(201,119,58,0.25);
+            padding: 3px 8px;
+            border-radius: 2px;
+        }
+
         /* ─── RESPONSIVE ─────────────────────────────────────── */
         @media (max-width: 960px) {
             .pillars { grid-template-columns: 1fr; }
@@ -526,7 +544,7 @@
         <circle class="route-dot end"   cx="1320" cy="282" r="5"/>
     </svg>
 
-    <div class="hero-eyebrow">Bikepacking Platform · Spain First · Global Next</div>
+    <div class="hero-eyebrow">Bikepacking Platform · Spain First · Global Next · EN / ES / CA</div>
     <h1 class="hero-title">RUTERA</h1>
     <p class="hero-subtitle">The living atlas for bikepackers.</p>
     <p class="hero-domain">Coming to <span>rutera.cc</span></p>
@@ -709,6 +727,11 @@
     <div class="footer-tagline">The living atlas for bikepackers.</div>
     <div class="footer-url">rutera.cc</div>
     <div class="footer-meta">Spain · 2026 · Private — Not yet launched</div>
+    <div class="footer-langs">
+        <span>EN</span>
+        <span>ES</span>
+        <span>CA · VAL</span>
+    </div>
 </footer>
 
 </body>
