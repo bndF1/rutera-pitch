@@ -1,592 +1,345 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRANSPYRENEES 2026 – Jersey Brief</title>
+  <title>TRANSPYRENEES 2026 - Jersey Pitch</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Inter, Arial, sans-serif;
-      background: #0f1114;
-      color: #e8e2d8;
+      background: #0a0e14;
+      color: #e6e8ec;
       line-height: 1.6;
-      padding: 40px;
+      padding: 24px;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .hero {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 48px;
-      background: linear-gradient(180deg, #15181d 0%, #0f1114 100%);
-      margin-bottom: 32px;
-    }
-
-    h1 {
-      font-size: 52px;
-      letter-spacing: 6px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .year {
-      color: #d29a4a;
-      letter-spacing: 4px;
-      font-size: 18px;
-      margin-bottom: 24px;
-    }
-
-    .intro {
-      max-width: 760px;
-      color: #b6b8bc;
-      font-size: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #171a20;
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 20px;
-      padding: 28px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-      color: #ffffff;
-    }
-
-    h3 {
-      margin-top: 18px;
-      margin-bottom: 10px;
-      font-size: 15px;
-      color: #d29a4a;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    p, li {
-      color: #c3c6ca;
-      font-size: 15px;
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    .palette {
+    .container { max-width: 1120px; margin: 0 auto; }
+    .topbar {
       display: flex;
-      gap: 12px;
-      margin-top: 12px;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
     }
-
-    .swatch {
-      width: 120px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .color {
-      height: 70px;
-    }
-
-    .label {
-      padding: 10px;
-      background: #111318;
+    .badge {
+      border: 1px solid rgba(212, 168, 75, 0.2);
+      color: #d4a84b;
+      border-radius: 999px;
+      padding: 8px 14px;
       font-size: 12px;
-      color: #d6d6d6;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
     }
-
-    .mono {
-      font-family: "IBM Plex Mono", monospace;
-      background: #111318;
-      padding: 12px;
-      border-radius: 10px;
-      color: #d9d9d9;
-      margin-top: 10px;
+    .picker {
+      min-height: 44px;
+      min-width: 150px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #121820;
+      color: #e6e8ec;
+      padding: 10px 12px;
       font-size: 14px;
     }
-
-    .cols {
-      columns: 2;
-      column-gap: 28px;
+    .hero {
+      border-radius: 24px;
+      padding: 36px;
+      background: linear-gradient(180deg, #121820 0%, #0a0e14 100%);
+      border: 1px solid rgba(212, 168, 75, 0.1);
+      margin-bottom: 20px;
     }
-
-    .footer {
-      margin-top: 32px;
-      text-align: center;
-      color: #70757e;
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: clamp(34px, 8vw, 58px);
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+    }
+    .year {
+      color: #d4a84b;
+      letter-spacing: 3px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .intro {
+      color: #c2c8d2;
+      max-width: 840px;
+      font-size: 17px;
+    }
+    .visual {
+      border-radius: 20px;
+      padding: 20px;
+      background: #121820;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 20px;
+    }
+    .visual h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .visual p {
+      color: #9ea7b3;
+      margin-bottom: 16px;
+    }
+    .visual img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #121820;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .card h3 {
+      color: #e6e8ec;
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #bcc4cf;
+      margin-bottom: 10px;
+    }
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: #d3d8e0;
+      font-size: 14px;
+    }
+    .card li::before {
+      content: "•";
+      color: #d4a84b;
+      margin-right: 8px;
+    }
+    .mono {
+      margin-top: 10px;
+      font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
       font-size: 13px;
+      white-space: pre-line;
+      color: #cfd5de;
+      background: #0f141c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
     }
-
+    .footer {
+      text-align: center;
+      color: #7a8494;
+      font-size: 12px;
+      margin-top: 20px;
+    }
     @media (max-width: 768px) {
-      body {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .hero {
-        padding: 32px;
-      }
-
-      .cols {
-        columns: 1;
-      }
+      body { padding: 14px; }
+      .hero { padding: 24px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="topbar">
+      <div class="badge" id="event-badge">TRANSPYRENEES 2026</div>
+      <label>
+        <select id="lang-picker" class="picker" aria-label="Language picker">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </label>
+    </div>
 
     <section class="hero">
       <h1>TRANSPYRENEES</h1>
-      <div class="year">2026 · CUSTOM RIDER EDITION</div>
-
-      <p class="intro">
-        Maillot d’ultraciclisme amb estètica cartogràfica minimalista.
-        Inspiració en bikepacking europeu, brevet cards i topografia dels Pirineus.
-        Objectiu: un disseny elegant, tècnic i molt net visualment.
-      </p>
+      <div class="year" data-i18n="year"></div>
+      <p class="intro" data-i18n="intro"></p>
     </section>
 
-    <section class="hero" style="margin-top:-8px; padding-top:36px;">
-      <h2 style="margin-bottom:24px;">Mockups del maillot</h2>
-      <p style="color:#9ea4ad;margin-bottom:28px;max-width:760px;">
-        Mateix disseny base per als dos maillots.
-        Únicament canvia el nom del ciclista damunt de les butxaques posteriors.
-      </p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;">
-
-      <div style="background:#12161c;border:1px solid rgba(255,255,255,0.06);padding:18px;border-radius:20px;">
-        <div style="margin-bottom:12px;color:#d29a4a;font-size:14px;letter-spacing:2px;text-transform:uppercase;">
-          Mockup principal del maillot
-        </div>
-
-      <svg viewBox="0 0 1040 520" width="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="jersey" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#171b21"/>
-            <stop offset="100%" stop-color="#0e1014"/>
-          </linearGradient>
-        </defs>
-
-        <!-- FRONT -->
-        <g transform="translate(120,40)">
-          <path d="M120 0 L210 40 L240 120 L240 360 Q240 420 180 440 L60 440 Q0 420 0 360 L0 120 L30 40 Z"
-            fill="url(#jersey)"
-            stroke="#2d333d"
-            stroke-width="2"/>
-
-          <line x1="120" y1="0" x2="120" y2="440" stroke="#2c3138" stroke-width="3"/>
-
-          <path d="M15 180 C80 200, 120 220, 180 240 C210 250, 220 270, 225 300"
-            stroke="#d29a4a"
-            stroke-width="4"
-            fill="none"/>
-
-          <text x="120" y="110" text-anchor="middle" fill="#f0eadf"
-            style="font-size:28px;font-family:Arial;letter-spacing:4px;">
-            TRANSPYRENEES
-          </text>
-
-          <text x="120" y="145" text-anchor="middle" fill="#d29a4a"
-            style="font-size:16px;font-family:Arial;letter-spacing:6px;">
-            2026
-          </text>
-
-          <text x="38" y="205" fill="#d7d1c7"
-            style="font-size:10px;font-family:'Courier New';">
-            SAN SEBASTIAN
-          </text>
-
-          <text x="155" y="310" fill="#d7d1c7"
-            style="font-size:10px;font-family:'Courier New';">
-            TOURMALET
-          </text>
-
-          <rect x="45" y="350" width="150" height="42" rx="6"
-            fill="#12151a" stroke="#2b3138"/>
-
-          <text x="120" y="376" text-anchor="middle" fill="#d7d1c7"
-            style="font-size:11px;font-family:'Courier New';">
-            1124 KM · 28.000 M+
-          </text>
-        </g>
-
-        <!-- BACK -->
-        <g transform="translate(680,40)">
-          <path d="M120 0 L210 40 L240 120 L240 360 Q240 420 180 440 L60 440 Q0 420 0 360 L0 120 L30 40 Z"
-            fill="url(#jersey)"
-            stroke="#2d333d"
-            stroke-width="2"/>
-
-          <text x="120" y="70" text-anchor="middle" fill="#f0eadf"
-            style="font-size:24px;font-family:Arial;letter-spacing:3px;">
-            TRANSPYRENEES
-          </text>
-
-          <text x="120" y="100" text-anchor="middle" fill="#d29a4a"
-            style="font-size:14px;font-family:Arial;letter-spacing:5px;">
-            2026
-          </text>
-
-          <path d="M25 130 C80 120, 110 160, 180 170 C205 175, 220 190, 225 210"
-            stroke="#d29a4a"
-            stroke-width="3"
-            fill="none"/>
-
-          <text x="40" y="185" fill="#d7d1c7"
-            style="font-size:9px;font-family:'Courier New';">
-            JAIZKIBEL
-          </text>
-
-          <text x="40" y="205" fill="#d7d1c7"
-            style="font-size:9px;font-family:'Courier New';">
-            AUBISQUE
-          </text>
-
-          <text x="40" y="225" fill="#d7d1c7"
-            style="font-size:9px;font-family:'Courier New';">
-            TOURMALET
-          </text>
-
-          <rect x="18" y="300" width="204" height="72" rx="8"
-            fill="#101318" stroke="#2b3138"/>
-
-          <text x="120" y="350" text-anchor="middle" fill="#f0eadf"
-            style="font-size:18px;font-family:'Courier New';letter-spacing:3px;">
-            <RIDER NAME>
-          </text>
-        </g>
-      </svg>
-      </div>
-
-      </div>
-        </div>
-      </div>
-
-      </div>
-
-      <div style="margin-top:8px;background:#12161c;border:1px solid rgba(255,255,255,0.06);padding:28px;border-radius:20px;">
-        <div style="margin-bottom:16px;color:#d29a4a;font-size:14px;letter-spacing:2px;text-transform:uppercase;">
-          Disseny final de referència
-        </div>
-
-        <div style="background:#0f1114;border-radius:18px;padding:20px;border:1px solid rgba(255,255,255,0.05);">
-          <div style="background:#0f1114;border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
-            <img src="maillot-tp.png" alt="Transpyrenees final jersey design" style="width:100%;display:block;border-radius:10px;" />
-          </div>
-
-          <p style="margin-top:14px;color:#9ea4ad;font-size:14px;line-height:1.7;">
-            Aquesta és la proposta visual final aprovada que s'haurà d'utilitzar com a referència principal de producció.
-            Inclou:
-            patró topogràfic subtil, línia de ruta completa, checkpoints, taula de ports posterior,
-            estètica brevet/cartogràfica i personalització amb &lt;RIDER NAME&gt;.
-          </p>
-        </div>
-      </div>
+    <section class="visual">
+      <h2 data-i18n="visual_title"></h2>
+      <p data-i18n="visual_desc"></p>
+      <img src="maillot-tp.png" alt="Transpyrenees maillot final design" />
     </section>
 
-    <div class="grid">
-
-      <div class="card">
-        <h2>Direcció visual</h2>
-
-        <h3>Concepte</h3>
+    <section class="grid">
+      <article class="card">
+        <h3 data-i18n="card_concept_title"></h3>
+        <p data-i18n="card_concept_subtitle"></p>
         <ul>
-          <li>Modern outdoor cartography</li>
-          <li>Ultra-endurance aesthetic</li>
-          <li>Premium understated design</li>
-          <li>Minimal però amb detalls tècnics</li>
+          <li data-i18n="concept_1"></li>
+          <li data-i18n="concept_2"></li>
+          <li data-i18n="concept_3"></li>
+          <li data-i18n="concept_4"></li>
         </ul>
+      </article>
 
-        <h3>Referències visuals</h3>
+      <article class="card">
+        <h3 data-i18n="card_palette_title"></h3>
+        <p data-i18n="card_palette_subtitle"></p>
+        <div class="mono">Graphite Black #111418
+Dark Slate #1E242C
+Amber Ochre #D29A4A
+Steel Blue #5F7488
+Warm White #DDD7CB</div>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="card_front_title"></h3>
+        <p data-i18n="card_front_subtitle"></p>
         <ul>
-          <li>Atlas Mountain Race</li>
-          <li>Transcontinental Race</li>
-          <li>Roadbook brevet cards</li>
-          <li>Mapes IGN / topografia moderna</li>
+          <li data-i18n="front_1"></li>
+          <li data-i18n="front_2"></li>
+          <li data-i18n="front_3"></li>
+          <li data-i18n="front_4"></li>
         </ul>
-      </div>
+        <div class="mono">1124 KM · 28.000 M+
+FOOD · WATER · BIVOUAC</div>
+      </article>
 
-      <div class="card">
-        <h2>Paleta de colors</h2>
-
-        <div class="palette">
-          <div class="swatch">
-            <div class="color" style="background:#111418"></div>
-            <div class="label">Graphite Black<br>#111418</div>
-          </div>
-
-          <div class="swatch">
-            <div class="color" style="background:#1e242c"></div>
-            <div class="label">Dark Slate<br>#1E242C</div>
-          </div>
-
-          <div class="swatch">
-            <div class="color" style="background:#d29a4a"></div>
-            <div class="label">Amber Ochre<br>#D29A4A</div>
-          </div>
-
-          <div class="swatch">
-            <div class="color" style="background:#5f7488"></div>
-            <div class="label">Steel Blue<br>#5F7488</div>
-          </div>
-
-          <div class="swatch">
-            <div class="color" style="background:#ddd7cb"></div>
-            <div class="label">Warm White<br>#DDD7CB</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Tipografia</h2>
-
-        <h3>Títols</h3>
-        <p>Inter / Sora / Neue Haas Grotesk</p>
-
-        <div class="mono">
-          TRANSPYRENEES 2026
-        </div>
-
-        <h3>Dades tècniques</h3>
-        <p>IBM Plex Mono / Space Mono</p>
-
-        <div class="mono">
-          1124 KM · 28.000 M+
-        </div>
-
-        <h3>Estil</h3>
+      <article class="card">
+        <h3 data-i18n="card_back_title"></h3>
+        <p data-i18n="card_back_subtitle"></p>
         <ul>
-          <li>Uppercase</li>
-          <li>Tracking ampli</li>
-          <li>Monospace per a dades</li>
-          <li>Look premium i funcional</li>
+          <li data-i18n="back_1"></li>
+          <li data-i18n="back_2"></li>
+          <li data-i18n="back_3"></li>
+          <li data-i18n="back_4"></li>
         </ul>
-      </div>
+        <div class="mono" data-i18n="back_customization"></div>
+      </article>
 
-      <div class="card">
-        <h2>Front del maillot</h2>
+      <article class="card">
+        <h3 data-i18n="card_cols_title"></h3>
+        <p data-i18n="card_cols_subtitle"></p>
+        <div class="mono">Jaizkibel · Ibardin · Lizunaga · Inzulegi
+Izpegi · Arnostegi · Ahusquy · Larrau
+Pierre Saint-Martin · Marie Blanque
+Aubisque · Tentes · Tourmalet
+Peyresourde · Portillon · Varradòs
+Bonaigua · Port de Cantó · Coll de Pradell
+Coll d'Ares · St Pere de Rodes</div>
+      </article>
 
-        <h3>Elements principals</h3>
+      <article class="card">
+        <h3 data-i18n="card_technical_title"></h3>
+        <p data-i18n="card_technical_subtitle"></p>
         <ul>
-          <li>Títol TRANSPYRENEES 2026 centrat</li>
-          <li>Línia de ruta estil GPS</li>
-          <li>Fons topogràfic subtil</li>
-          <li>Micro detalls tècnics</li>
+          <li data-i18n="tech_1"></li>
+          <li data-i18n="tech_2"></li>
+          <li data-i18n="tech_3"></li>
+          <li data-i18n="tech_4"></li>
+          <li data-i18n="tech_5"></li>
+          <li data-i18n="tech_6"></li>
         </ul>
+      </article>
+    </section>
 
-        <h3>Cols visibles</h3>
-        <ul>
-          <li>Larrau</li>
-          <li>La Pierre Saint-Martin</li>
-          <li>Aubisque</li>
-          <li>Tourmalet</li>
-          <li>Portillon</li>
-          <li>Llançà</li>
-        </ul>
-
-        <h3>Info inferior</h3>
-        <div class="mono">
-          1124 KM · 28.000 M+
-          <br>
-          FOOD · WATER · BIVOUAC
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Back del maillot</h2>
-
-        <h3>Composició</h3>
-        <ul>
-          <li>Ruta completa a la part superior</li>
-          <li>Llista compacta de cols</li>
-          <li>Nom del rider damunt de les butxaques</li>
-          <li>Coordenades inici/final</li>
-        </ul>
-
-        <h3>Personalització</h3>
-        <div class="mono">
-          VERSION 01 · MONTSE
-          <br>
-          VERSION 02 · JESÚS
-        </div>
-
-        <p style="margin-top:12px;">
-          Mateix disseny base amb canvi únicament del nom damunt de les butxaques posteriors.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Taula posterior de ports</h2>
-
-        <p style="margin-bottom:16px;color:#9ea4ad;">
-          Llistat compacte per a la part posterior del maillot.
-          Estil monospace tipus brevet / control card.
-        </p>
-
-        <div class="cols">
-          <p>
-            Jaizkibel<br>
-            Ibardin<br>
-            Lizunaga<br>
-            Inzulegi<br>
-            Izpegi<br>
-            Arnostegi<br>
-            Ahusquy<br>
-            Larrau<br>
-            Pierre Saint-Martin<br>
-            Marie Blanque<br>
-            Aubisque<br>
-            Tentes<br>
-            Tourmalet<br>
-            Peyresourde<br>
-            Portillon<br>
-            Varradòs<br>
-            Bonaigua<br>
-            Port de Cantó<br>
-            Coll de la Trava<br>
-            Coll de Pradell<br>
-            Coll d’Ares<br>
-            St Pere de Rodes
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Construcció tècnica</h2>
-
-        <ul>
-          <li>Race fit endurance</li>
-          <li>Màniga tall laser</li>
-          <li>Triple pocket posterior</li>
-          <li>Butxaca amb zip</li>
-          <li>Grip siliconat inferior</li>
-          <li>Cremallera invisible</li>
-          <li>Teixit microperforat lateral</li>
-        </ul>
-
-        <h3>Impressió</h3>
-        <ul>
-          <li>Sublimació completa</li>
-          <li>Vector-ready</li>
-          <li>Print-safe colors</li>
-          <li>Línies fines ben definides</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Ruta vectorial</h2>
-
-        <h3>Entregar per separat</h3>
-        <ul>
-          <li>SVG vectorial de la ruta completa</li>
-          <li>Línia contínua tipus GPS track</li>
-          <li>Punts/checkpoints circulars</li>
-          <li>Ports etiquetats manualment</li>
-          <li>Versió simplificada per frontal</li>
-          <li>Versió completa per posterior</li>
-        </ul>
-
-        <h3>Estil gràfic</h3>
-        <ul>
-          <li>Stroke fi i net</li>
-          <li>Color Amber Ochre #D29A4A</li>
-          <li>Sense ombres ni gradients</li>
-          <li>Escalable per sublimació</li>
-        </ul>
-
-        <h3>Línia de la ruta</h3>
-
-        <div style="background:#101318;border:1px solid rgba(255,255,255,0.05);padding:18px;border-radius:12px;margin-top:12px;margin-bottom:18px;">
-          <svg viewBox="0 0 800 180" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 140 C80 120,120 90,170 100 C240 110,260 40,320 55 C390 70,420 120,500 110 C590 100,610 40,700 60 C740 70,760 80,780 40"
-              stroke="#d29a4a"
-              stroke-width="4"
-              fill="none"
-              stroke-linecap="round"/>
-
-            <circle cx="20" cy="140" r="5" fill="#d29a4a"/>
-            <circle cx="170" cy="100" r="5" fill="#d29a4a"/>
-            <circle cx="320" cy="55" r="5" fill="#d29a4a"/>
-            <circle cx="500" cy="110" r="5" fill="#d29a4a"/>
-            <circle cx="700" cy="60" r="5" fill="#d29a4a"/>
-            <circle cx="780" cy="40" r="5" fill="#d29a4a"/>
-
-            <text x="10" y="160" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">SAN SEBASTIAN</text>
-            <text x="145" y="90" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">LARRAU</text>
-            <text x="285" y="40" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">TOURMALET</text>
-            <text x="470" y="135" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">BONAIGUA</text>
-            <text x="665" y="45" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">ST PERE DE RODES</text>
-            <text x="710" y="28" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">LLANÇÀ</text>
-          </svg>
-        </div>
-
-        <h3>Punts principals de la ruta</h3>
-
-        <div class="mono">
-START · SAN SEBASTIAN
-#1 JAIZKIBEL
-#6 IZPEGI
-#10 LARRAU
-#12 LA PIERRE SAINT-MARTIN
-#14 AUBISQUE
-#16 TENTES
-#17 TOURMALET
-#19 PEYRESOURDE
-#20 PORTILLON
-#21 VARRADÒS
-#23 BONAIGUA
-#24 PORT DE CANTÓ
-#29 COLL DE CREU/CANES
-#32 COLL D'ARES
-#34 ST PERE DE RODES
-FINISH · LLANÇÀ
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Coordenades</h2>
-
-        <div class="mono">
-          SAN SEBASTIAN
-          <br>
-          43.3183° N · 1.9812° W
-          <br><br>
-          LLANÇÀ
-          <br>
-          42.3871° N · 3.1748° E
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer">
-      TRANSPYRENEES 2026 · Engobe Jersey Production Brief
-    </div>
+    <p class="footer" data-i18n="footer"></p>
   </div>
+
+  <script>
+    const i18n = {
+      en: {
+        year: "2026 · CUSTOM RIDER EDITION",
+        intro: "Ultra-cycling jersey with a clean cartographic aesthetic inspired by modern bikepacking, brevet roadbooks and Pyrenees topography. Goal: elegant, technical and premium visual identity.",
+        visual_title: "Final jersey reference",
+        visual_desc: "Approved production reference. Same base design for all riders, changing only the rider name above the rear pockets.",
+        card_concept_title: "Visual direction",
+        card_concept_subtitle: "Design DNA",
+        concept_1: "Modern outdoor cartography",
+        concept_2: "Ultra-endurance race aesthetic",
+        concept_3: "Premium understated style",
+        concept_4: "Minimal layout with technical details",
+        card_palette_title: "Color palette",
+        card_palette_subtitle: "Dark-first base + warm race accents",
+        card_front_title: "Front jersey composition",
+        card_front_subtitle: "Main visual blocks",
+        front_1: "Centered TRANSPYRENEES 2026 title lockup",
+        front_2: "GPS-style route line",
+        front_3: "Subtle topographic background",
+        front_4: "Compact technical data module",
+        card_back_title: "Back jersey composition",
+        card_back_subtitle: "Personalized endurance identity",
+        back_1: "Full route line in the upper area",
+        back_2: "Compact climb list",
+        back_3: "Rider name above rear pockets",
+        back_4: "Start/finish coordinates module",
+        back_customization: "VERSION 01 · MONTSE\nVERSION 02 · JESUS",
+        card_cols_title: "Climb list (rear panel)",
+        card_cols_subtitle: "Monospace style inspired by brevet control cards",
+        card_technical_title: "Technical build requirements",
+        card_technical_subtitle: "Garment and print constraints",
+        tech_1: "Endurance race fit",
+        tech_2: "Laser-cut sleeves",
+        tech_3: "Triple rear pocket + zip pocket",
+        tech_4: "Silicone hem gripper",
+        tech_5: "Full sublimation, vector-ready",
+        tech_6: "Fine-line details must remain crisp in print",
+        footer: "TRANSPYRENEES 2026 · Jersey Production Pitch"
+      },
+      es: {
+        year: "2026 · EDICION PERSONALIZADA PARA RIDERS",
+        intro: "Maillot de ultraciclismo con estetica cartografica limpia, inspirado en el bikepacking moderno, los roadbooks de brevet y la topografia de los Pirineos. Objetivo: identidad visual elegante, tecnica y premium.",
+        visual_title: "Referencia final del maillot",
+        visual_desc: "Referencia aprobada para produccion. Misma base para todos los maillots, cambiando solo el nombre del rider sobre los bolsillos traseros.",
+        card_concept_title: "Direccion visual",
+        card_concept_subtitle: "ADN del diseno",
+        concept_1: "Cartografia outdoor moderna",
+        concept_2: "Estetica de ultra resistencia",
+        concept_3: "Estilo premium y sobrio",
+        concept_4: "Diseno minimalista con detalle tecnico",
+        card_palette_title: "Paleta de color",
+        card_palette_subtitle: "Base dark + acentos calidos de carrera",
+        card_front_title: "Composicion frontal",
+        card_front_subtitle: "Bloques visuales principales",
+        front_1: "Lockup centrado TRANSPYRENEES 2026",
+        front_2: "Linea de ruta estilo GPS",
+        front_3: "Fondo topografico sutil",
+        front_4: "Modulo tecnico compacto",
+        card_back_title: "Composicion trasera",
+        card_back_subtitle: "Identidad de resistencia personalizada",
+        back_1: "Ruta completa en la zona superior",
+        back_2: "Listado compacto de puertos",
+        back_3: "Nombre del rider sobre bolsillos traseros",
+        back_4: "Modulo de coordenadas inicio/final",
+        back_customization: "VERSION 01 · MONTSE\nVERSION 02 · JESUS",
+        card_cols_title: "Listado de puertos (panel trasero)",
+        card_cols_subtitle: "Estilo monospace inspirado en tarjetas de control brevet",
+        card_technical_title: "Requisitos tecnicos de produccion",
+        card_technical_subtitle: "Condiciones de prenda e impresion",
+        tech_1: "Race fit endurance",
+        tech_2: "Manga con corte laser",
+        tech_3: "Triple bolsillo trasero + bolsillo con cremallera",
+        tech_4: "Grip siliconado en el bajo",
+        tech_5: "Sublimacion completa, archivo vectorial listo",
+        tech_6: "Las lineas finas deben mantenerse nitidas al imprimir",
+        footer: "TRANSPYRENEES 2026 · Pitch de produccion del maillot"
+      }
+    };
+
+    const langPicker = document.getElementById("lang-picker");
+    const translatableNodes = document.querySelectorAll("[data-i18n]");
+
+    function applyLanguage(lang) {
+      const dict = i18n[lang] || i18n.en;
+      document.documentElement.lang = lang;
+      translatableNodes.forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (dict[key]) node.textContent = dict[key];
+      });
+    }
+
+    langPicker.addEventListener("change", (event) => {
+      applyLanguage(event.target.value);
+    });
+
+    applyLanguage("en");
+  </script>
 </body>
 </html>
