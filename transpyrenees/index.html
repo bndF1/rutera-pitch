@@ -107,23 +107,6 @@
       font-size: 13px;
       margin-bottom: 10px;
     }
-    .route-legend {
-      margin-top: 12px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 6px 14px;
-      color: #cfd5de;
-      font-size: 12px;
-      font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
-    }
-    .route-legend-title {
-      margin-top: 10px;
-      color: #d4a84b;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -202,6 +185,7 @@
       <h2 data-i18n="visual_title"></h2>
       <p data-i18n="visual_desc"></p>
       <img src="maillot-tp.png" alt="Transpyrenees maillot final design" />
+      <p><a href="maillot-recreation.html" style="color:#d4a84b;text-decoration:none;font-weight:600;">Open editable maillot recreation (HTML)</a></p>
       <div class="route-preview">
         <h3 data-i18n="route_line_title"></h3>
         <p data-i18n="route_line_desc"></p>
@@ -228,23 +212,19 @@
           <circle cx="780" cy="40" r="5" fill="#d29a4a"/>
 
           <text x="10" y="160" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">SAN SEBASTIAN</text>
-          <text x="705" y="28" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">LLANCA</text>
+          <text x="58" y="90" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">JAIZKIBEL · KM 35</text>
+          <text x="145" y="90" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">LARRAU · KM 240</text>
+          <text x="208" y="46" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">AUBISQUE · KM 360</text>
+          <text x="286" y="42" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">TOURMALET · KM 430</text>
+          <text x="352" y="26" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">PEYRESOURDE · KM 510</text>
+          <text x="432" y="88" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">PORTILHON · KM 615</text>
+          <text x="468" y="134" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">BONAIGUA · KM 760</text>
+          <text x="520" y="132" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">PORT DEL CANTÓ · KM 880</text>
+          <text x="548" y="104" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">COLL DE LA TRAVA · KM 930</text>
+          <text x="566" y="96" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">COLL DE PRADELL · KM 970</text>
+          <text x="602" y="78" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">COLL D'ARES · KM 1030</text>
+          <text x="700" y="28" fill="#cfd3d8" style="font-size:11px;font-family:'Courier New';">LLANCA · KM 1124</text>
         </svg>
-        <div class="route-legend-title" data-i18n="route_legend_title"></div>
-        <div class="route-legend">
-          <div>01 · JAIZKIBEL · KM 35</div>
-          <div>02 · LARRAU · KM 240</div>
-          <div>03 · AUBISQUE · KM 360</div>
-          <div>04 · TOURMALET · KM 430</div>
-          <div>05 · PEYRESOURDE · KM 510</div>
-          <div>06 · PORTILHON · KM 615</div>
-          <div>07 · BONAIGUA · KM 760</div>
-          <div>08 · PORT DEL CANTÓ · KM 880</div>
-          <div>09 · COLL DE LA TRAVA · KM 930</div>
-          <div>10 · COLL DE PRADELL · KM 970</div>
-          <div>11 · COLL D'ARES · KM 1030</div>
-          <div>12 · LLANCA · KM 1124</div>
-        </div>
       </div>
     </section>
 
@@ -333,7 +313,6 @@ Coll d'Ares</div>
         visual_desc: "Approved production reference. Same base design for all riders, changing only the rider name above the rear pockets.",
         route_line_title: "Route line preview",
         route_line_desc: "This path line is a key visual element of the jersey and represents the Transpyrenees crossing.",
-        route_legend_title: "Route checkpoints (ordered)",
         card_concept_title: "Visual direction",
         card_concept_subtitle: "Design DNA",
         concept_1: "Modern outdoor cartography",
@@ -374,7 +353,6 @@ Coll d'Ares</div>
         visual_desc: "Referencia aprobada para produccion. Misma base para todos los maillots, cambiando solo el nombre del rider sobre los bolsillos traseros.",
         route_line_title: "Previsualizacion de la linea de ruta",
         route_line_desc: "Esta linea es un elemento clave del maillot y representa el recorrido Transpyrenees.",
-        route_legend_title: "Puntos de la ruta (ordenados)",
         card_concept_title: "Direccion visual",
         card_concept_subtitle: "ADN del diseno",
         concept_1: "Cartografia outdoor moderna",
@@ -415,7 +393,6 @@ Coll d'Ares</div>
         visual_desc: "Referencia aprovada per a produccio. Mateixa base per a tots els maillots, canviant nomes el nom del rider damunt de les butxaques posteriors.",
         route_line_title: "Previsualitzacio de la linia de ruta",
         route_line_desc: "Aquesta linia es un element clau del maillot i representa el recorregut Transpyrenees.",
-        route_legend_title: "Punts de la ruta (ordenats)",
         card_concept_title: "Direccio visual",
         card_concept_subtitle: "ADN del disseny",
         concept_1: "Cartografia outdoor moderna",

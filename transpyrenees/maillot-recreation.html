@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transpyrenees - Maillot HTML Recreation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Inter, Arial, sans-serif;
+      background: #0a0e14;
+      color: #e6e8ec;
+    }
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .panel {
+      background: #121820;
+      border: 1px solid rgba(212, 168, 75, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-family: "Playfair Display", serif;
+      color: #d4a84b;
+      letter-spacing: 1px;
+      font-size: clamp(24px, 4vw, 36px);
+    }
+    .sub {
+      margin: 0;
+      color: #9ea7b3;
+      font-size: 14px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 16px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: #9ea7b3;
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    input, textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #0f141c;
+      color: #e6e8ec;
+      padding: 10px 12px;
+      margin: 0 0 12px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+    }
+    textarea { min-height: 240px; resize: vertical; }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .jersey {
+      background: #0f141c;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #7a8494;
+    }
+    @media (max-width: 1000px) {
+      .layout { grid-template-columns: 1fr; }
+      .preview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="panel">
+      <h1>Maillot Recreation (HTML editable)</h1>
+      <p class="sub">Mockup editable per iterar textos i punts de ruta. No substitueix el fitxer de disseny final.</p>
+    </section>
+
+    <section class="panel layout">
+      <div>
+        <label for="riderName">Rider name</label>
+        <input id="riderName" value="MONTSE" />
+
+        <label for="bottomWord">Bottom word (FOOD · WATER · ?)</label>
+        <input id="bottomWord" value="MOTIVATION" />
+
+        <label for="routePoints">Route points (FORMAT: NAME|KM, una línia per punt)</label>
+        <textarea id="routePoints">JAIZKIBEL|35
+LARRAU|240
+AUBISQUE|360
+TOURMALET|430
+PEYRESOURDE|510
+PORTILHON|615
+BONAIGUA|760
+PORT DEL CANTÓ|880
+COLL DE LA TRAVA|930
+COLL DE PRADELL|970
+COLL D'ARES|1030
+LLANCA|1124</textarea>
+      </div>
+
+      <div class="preview-grid">
+        <div class="jersey">
+          <svg id="frontSvg" viewBox="0 0 520 620" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="frontGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1e242c" />
+                <stop offset="100%" stop-color="#111418" />
+              </linearGradient>
+            </defs>
+            <path d="M110 90 L190 40 H330 L410 90 L470 165 L420 220 L420 560 H100 L100 220 L50 165 Z" fill="url(#frontGrad)" stroke="#5f7488" stroke-width="3"/>
+            <text x="260" y="165" fill="#ddd7cb" text-anchor="middle" style="font-family:'Playfair Display',serif;font-size:34px;letter-spacing:2px;">TRANSPYRENEES</text>
+            <text x="260" y="195" fill="#d29a4a" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:17px;">2026</text>
+            <path id="frontRoutePath" d="" fill="none" stroke="#d29a4a" stroke-width="6" stroke-linecap="round"/>
+            <g id="frontRouteDots"></g>
+            <text x="260" y="526" fill="#ddd7cb" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:18px;">1124 KM · 28.000 M+</text>
+            <text id="frontBottomLine" x="260" y="552" fill="#d29a4a" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:16px;">FOOD · WATER · MOTIVATION</text>
+          </svg>
+        </div>
+
+        <div class="jersey">
+          <svg id="backSvg" viewBox="0 0 520 620" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="backGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1e242c" />
+                <stop offset="100%" stop-color="#111418" />
+              </linearGradient>
+            </defs>
+            <path d="M110 90 L190 40 H330 L410 90 L470 165 L420 220 L420 560 H100 L100 220 L50 165 Z" fill="url(#backGrad)" stroke="#5f7488" stroke-width="3"/>
+            <path id="backRoutePath" d="" fill="none" stroke="#d29a4a" stroke-width="6" stroke-linecap="round"/>
+            <g id="backRouteDots"></g>
+            <text id="riderNameText" x="260" y="350" fill="#ddd7cb" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:30px;letter-spacing:2px;">MONTSE</text>
+            <rect x="125" y="392" width="270" height="86" rx="16" fill="#0a0e14" stroke="#d29a4a" stroke-opacity="0.35"/>
+            <text x="260" y="425" fill="#d29a4a" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:15px;">PORTS + KM</text>
+            <text id="portsSummary" x="260" y="450" fill="#ddd7cb" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;">JAIZKIBEL · LARRAU · AUBISQUE</text>
+            <text id="finishText" x="260" y="470" fill="#ddd7cb" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;">... · COLL D'ARES · LLANCA</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <p class="note">Tip: edita el textarea i la previsualització s’actualitza automàticament.</p>
+  </div>
+
+  <script>
+    const riderNameInput = document.getElementById("riderName");
+    const bottomWordInput = document.getElementById("bottomWord");
+    const routePointsInput = document.getElementById("routePoints");
+
+    const riderNameText = document.getElementById("riderNameText");
+    const frontBottomLine = document.getElementById("frontBottomLine");
+    const portsSummary = document.getElementById("portsSummary");
+    const finishText = document.getElementById("finishText");
+
+    const frontRoutePath = document.getElementById("frontRoutePath");
+    const backRoutePath = document.getElementById("backRoutePath");
+    const frontRouteDots = document.getElementById("frontRouteDots");
+    const backRouteDots = document.getElementById("backRouteDots");
+
+    function parsePoints() {
+      return routePointsInput.value
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .map((line) => {
+          const [name, km] = line.split("|");
+          return { name: (name || "").trim(), km: (km || "").trim() };
+        })
+        .filter((point) => point.name);
+    }
+
+    function buildCurve(points, minX, maxX, baseY, amplitude) {
+      if (!points.length) return { path: "", coords: [] };
+      if (points.length === 1) return { path: `M ${minX} ${baseY}`, coords: [{ x: minX, y: baseY }] };
+
+      const span = maxX - minX;
+      const coords = points.map((_, index) => {
+        const ratio = index / (points.length - 1);
+        const x = minX + ratio * span;
+        const y = baseY + Math.sin(index * 0.85) * amplitude + Math.cos(index * 0.45) * (amplitude * 0.3);
+        return { x, y };
+      });
+
+      const path = coords.map((coord, index) => `${index === 0 ? "M" : "L"} ${coord.x.toFixed(2)} ${coord.y.toFixed(2)}`).join(" ");
+      return { path, coords };
+    }
+
+    function renderDots(group, coords) {
+      group.innerHTML = "";
+      coords.forEach((coord) => {
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", coord.x.toFixed(2));
+        dot.setAttribute("cy", coord.y.toFixed(2));
+        dot.setAttribute("r", "5");
+        dot.setAttribute("fill", "#d29a4a");
+        group.appendChild(dot);
+      });
+    }
+
+    function updatePreview() {
+      const riderName = riderNameInput.value.trim() || "RIDER";
+      const bottomWord = bottomWordInput.value.trim() || "MOTIVATION";
+      const points = parsePoints();
+
+      riderNameText.textContent = riderName.toUpperCase();
+      frontBottomLine.textContent = `FOOD · WATER · ${bottomWord.toUpperCase()}`;
+
+      const frontCurve = buildCurve(points, 105, 415, 255, 48);
+      const backCurve = buildCurve(points, 105, 415, 245, 44);
+      frontRoutePath.setAttribute("d", frontCurve.path);
+      backRoutePath.setAttribute("d", backCurve.path);
+      renderDots(frontRouteDots, frontCurve.coords);
+      renderDots(backRouteDots, backCurve.coords);
+
+      const names = points.map((point) => `${point.name}${point.km ? ` (${point.km})` : ""}`);
+      portsSummary.textContent = names.slice(0, 3).join(" · ") || "PORTS + KM";
+      finishText.textContent = names.length > 3 ? names.slice(3).join(" · ") : "...";
+    }
+
+    riderNameInput.addEventListener("input", updatePreview);
+    bottomWordInput.addEventListener("input", updatePreview);
+    routePointsInput.addEventListener("input", updatePreview);
+    updatePreview();
+  </script>
+</body>
+</html>
