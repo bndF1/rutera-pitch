@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>TRANSPYRENEES 2026 - Jersey Pitch</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -107,6 +110,76 @@
       font-size: 13px;
       margin-bottom: 10px;
     }
+    .route-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+    .route-option {
+      background: #121820;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .route-option.recommended {
+      border-color: rgba(212, 168, 75, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(212, 168, 75, 0.08);
+    }
+    .route-option-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .route-option-title {
+      color: #e6e8ec;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .route-option-badge {
+      color: #d4a84b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .route-option-copy {
+      color: #9ea7b3;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .route-option svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 8px;
+    }
+    .route-chip-row,
+    .route-stat-row,
+    .route-roadbook {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .route-chip,
+    .route-stat,
+    .route-roadbook span {
+      font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #d5d9df;
+      background: #0f141c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      padding: 5px 8px;
+    }
+    .route-stat {
+      color: #d4a84b;
+      border-color: rgba(212, 168, 75, 0.22);
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -189,51 +262,129 @@
       <div class="route-preview">
         <h3 data-i18n="route_line_title"></h3>
         <p data-i18n="route_line_desc"></p>
-        <svg viewBox="0 0 800 180" width="100%" xmlns="http://www.w3.org/2000/svg" aria-label="Transpyrenees route line preview">
-          <path d="M20 142 C45 128,65 108,90 98 C115 88,140 104,165 96 C195 88,215 60,240 54 C268 48,294 78,320 64 C345 52,368 30,392 34 C420 40,446 84,472 94 C502 106,530 120,560 116 C588 112,614 92,640 86 C668 80,696 60,722 56 C744 52,760 44,780 40"
-            stroke="#d29a4a"
-            stroke-width="4"
-            fill="none"
-            stroke-linecap="round"/>
+        <div class="route-options">
+          <article class="route-option recommended">
+            <div class="route-option-header">
+              <div class="route-option-title" data-i18n="route_option_a_title"></div>
+              <div class="route-option-badge" data-i18n="route_option_recommended"></div>
+            </div>
+            <p class="route-option-copy" data-i18n="route_option_a_desc"></p>
+            <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" aria-label="Route option names on line">
+              <path d="M20 142 C45 128,65 108,90 98 C115 88,140 104,165 96 C195 88,215 60,240 54 C268 48,294 78,320 64 C345 52,368 30,392 34 C420 40,446 84,472 94 C502 106,530 120,560 116 C588 112,614 92,640 86 C668 80,696 60,722 56 C744 52,760 44,780 40" stroke="#d29a4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="20" cy="140" r="5" fill="#d29a4a"/>
+              <circle cx="90" cy="98" r="5" fill="#d29a4a"/>
+              <circle cx="170" cy="100" r="5" fill="#d29a4a"/>
+              <circle cx="240" cy="54" r="5" fill="#d29a4a"/>
+              <circle cx="320" cy="55" r="5" fill="#d29a4a"/>
+              <circle cx="392" cy="34" r="5" fill="#d29a4a"/>
+              <circle cx="472" cy="94" r="5" fill="#d29a4a"/>
+              <circle cx="500" cy="110" r="5" fill="#d29a4a"/>
+              <circle cx="560" cy="116" r="5" fill="#d29a4a"/>
+              <circle cx="580" cy="108" r="5" fill="#d29a4a"/>
+              <circle cx="600" cy="100" r="5" fill="#d29a4a"/>
+              <circle cx="640" cy="86" r="5" fill="#d29a4a"/>
+              <circle cx="722" cy="56" r="5" fill="#d29a4a"/>
+              <circle cx="780" cy="40" r="5" fill="#d29a4a"/>
+              <line x1="560" y1="116" x2="545" y2="146" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
+              <line x1="580" y1="108" x2="568" y2="92" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
+              <line x1="600" y1="100" x2="598" y2="126" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
+              <line x1="640" y1="86" x2="638" y2="76" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
+              <text x="8" y="160" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">SAN SEBASTIAN</text>
+              <text x="52" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">JAIZKIBEL</text>
+              <text x="145" y="88" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">LARRAU</text>
+              <text x="202" y="44" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">AUBISQUE</text>
+              <text x="278" y="36" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">TOURMALET</text>
+              <text x="350" y="22" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PEYRESOURDE</text>
+              <text x="430" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PORTILHON</text>
+              <text x="470" y="132" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">BONAIGUA</text>
+              <text x="500" y="154" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PORT DEL CANTÓ</text>
+              <text x="542" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL DE LA TRAVA</text>
+              <text x="590" y="136" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL DE PRADELL</text>
+              <text x="632" y="72" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL D'ARES</text>
+              <text x="730" y="34" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">LLANCA</text>
+            </svg>
+          </article>
 
-          <!-- Start point -->
-          <circle cx="20" cy="140" r="5" fill="#d29a4a"/>
+          <article class="route-option">
+            <div class="route-option-header">
+              <div class="route-option-title" data-i18n="route_option_b_title"></div>
+            </div>
+            <p class="route-option-copy" data-i18n="route_option_b_desc"></p>
+            <svg viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" aria-label="Route option with kilometer chips">
+              <path d="M20 122 C45 108,65 88,90 78 C115 68,140 84,165 76 C195 68,215 40,240 34 C268 28,294 58,320 44 C345 32,368 14,392 18 C420 24,446 68,472 78 C502 90,530 104,560 100 C588 96,614 76,640 70 C668 64,696 44,722 40 C744 36,760 28,780 24" stroke="#d29a4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <g fill="#d29a4a">
+                <circle cx="20" cy="122" r="4"/><circle cx="90" cy="78" r="4"/><circle cx="170" cy="80" r="4"/><circle cx="240" cy="34" r="4"/><circle cx="320" cy="35" r="4"/><circle cx="392" cy="18" r="4"/><circle cx="472" cy="78" r="4"/><circle cx="500" cy="90" r="4"/><circle cx="560" cy="100" r="4"/><circle cx="580" cy="92" r="4"/><circle cx="600" cy="84" r="4"/><circle cx="640" cy="70" r="4"/><circle cx="722" cy="40" r="4"/><circle cx="780" cy="24" r="4"/>
+              </g>
+              <text x="8" y="142" fill="#7a8494" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">START</text>
+              <text x="748" y="18" fill="#7a8494" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">FINISH</text>
+            </svg>
+            <div class="route-chip-row">
+              <span class="route-chip">JAIZKIBEL · KM 35</span>
+              <span class="route-chip">LARRAU · KM 240</span>
+              <span class="route-chip">AUBISQUE · KM 360</span>
+              <span class="route-chip">TOURMALET · KM 430</span>
+              <span class="route-chip">PEYRESOURDE · KM 510</span>
+              <span class="route-chip">PORTILHON · KM 615</span>
+              <span class="route-chip">BONAIGUA · KM 760</span>
+              <span class="route-chip">PORT DEL CANTÓ · KM 880</span>
+              <span class="route-chip">COLL DE LA TRAVA · KM 930</span>
+              <span class="route-chip">COLL DE PRADELL · KM 970</span>
+              <span class="route-chip">COLL D'ARES · KM 1030</span>
+              <span class="route-chip">LLANCA · KM 1124</span>
+            </div>
+          </article>
 
-          <!-- Route points -->
-          <circle cx="90" cy="98" r="5" fill="#d29a4a"/>
-          <circle cx="170" cy="100" r="5" fill="#d29a4a"/>
-          <circle cx="240" cy="54" r="5" fill="#d29a4a"/>
-          <circle cx="320" cy="55" r="5" fill="#d29a4a"/>
-          <circle cx="392" cy="34" r="5" fill="#d29a4a"/>
-          <circle cx="472" cy="94" r="5" fill="#d29a4a"/>
-          <circle cx="500" cy="110" r="5" fill="#d29a4a"/>
-          <circle cx="560" cy="116" r="5" fill="#d29a4a"/>
-          <circle cx="580" cy="108" r="5" fill="#d29a4a"/>
-          <circle cx="600" cy="100" r="5" fill="#d29a4a"/>
-          <circle cx="640" cy="86" r="5" fill="#d29a4a"/>
-          <circle cx="722" cy="56" r="5" fill="#d29a4a"/>
-          <circle cx="780" cy="40" r="5" fill="#d29a4a"/>
+          <article class="route-option">
+            <div class="route-option-header">
+              <div class="route-option-title" data-i18n="route_option_c_title"></div>
+            </div>
+            <p class="route-option-copy" data-i18n="route_option_c_desc"></p>
+            <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" aria-label="Route option with key passes and total stats">
+              <path d="M20 126 C45 112,65 92,90 82 C115 72,140 88,165 80 C195 72,215 44,240 38 C268 32,294 62,320 48 C345 36,368 18,392 22 C420 28,446 72,472 82 C502 94,530 108,560 104 C588 100,614 80,640 74 C668 68,696 48,722 44 C744 40,760 32,780 28" stroke="#d29a4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <g fill="#d29a4a">
+                <circle cx="20" cy="126" r="4"/><circle cx="90" cy="82" r="4"/><circle cx="320" cy="48" r="5"/><circle cx="560" cy="104" r="5"/><circle cx="780" cy="28" r="5"/>
+              </g>
+              <text x="44" y="70" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">JAIZKIBEL</text>
+              <text x="274" y="34" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">TOURMALET</text>
+              <text x="506" y="126" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">PORT DEL CANTÓ</text>
+              <text x="712" y="20" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">LLANCA</text>
+            </svg>
+            <div class="route-stat-row">
+              <span class="route-stat">12 PORTS</span>
+              <span class="route-stat">1124 KM</span>
+              <span class="route-stat">28.000 M+</span>
+            </div>
+          </article>
 
-          <!-- Guide lines for dense cluster -->
-          <line x1="560" y1="116" x2="545" y2="146" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
-          <line x1="580" y1="108" x2="568" y2="92" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
-          <line x1="600" y1="100" x2="598" y2="126" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
-          <line x1="640" y1="86" x2="638" y2="76" stroke="#d29a4a" stroke-width="0.8" opacity="0.45"/>
-
-          <text x="8" y="160" fill="#cfd3d8" style="font-size:11px;font-family:'JetBrains Mono';font-weight:500;">SAN SEBASTIAN</text>
-          <text x="52" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">JAIZKIBEL</text>
-          <text x="145" y="88" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">LARRAU</text>
-          <text x="202" y="44" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">AUBISQUE</text>
-          <text x="278" y="36" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">TOURMALET</text>
-          <text x="350" y="22" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PEYRESOURDE</text>
-          <text x="430" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PORTILHON</text>
-          <text x="470" y="132" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">BONAIGUA</text>
-          <text x="500" y="154" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">PORT DEL CANTÓ</text>
-          <text x="542" y="86" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL DE LA TRAVA</text>
-          <text x="590" y="136" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL DE PRADELL</text>
-          <text x="632" y="72" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">COLL D'ARES</text>
-          <text x="730" y="34" fill="#cfd3d8" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">LLANCA</text>
-        </svg>
+          <article class="route-option">
+            <div class="route-option-header">
+              <div class="route-option-title" data-i18n="route_option_d_title"></div>
+            </div>
+            <p class="route-option-copy" data-i18n="route_option_d_desc"></p>
+            <svg viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" aria-label="Route option in roadbook format">
+              <path d="M20 92 C60 92,80 92,120 92 C160 92,180 92,220 92 C260 92,280 92,320 92 C360 92,380 92,420 92 C460 92,480 92,520 92 C560 92,580 92,620 92 C660 92,700 92,780 92" stroke="#3d5a80" stroke-width="2" fill="none" stroke-dasharray="6 6"/>
+              <g fill="#d29a4a">
+                <circle cx="20" cy="92" r="5"/><circle cx="90" cy="92" r="5"/><circle cx="170" cy="92" r="5"/><circle cx="240" cy="92" r="5"/><circle cx="320" cy="92" r="5"/><circle cx="392" cy="92" r="5"/><circle cx="472" cy="92" r="5"/><circle cx="500" cy="92" r="5"/><circle cx="560" cy="92" r="5"/><circle cx="580" cy="92" r="5"/><circle cx="600" cy="92" r="5"/><circle cx="640" cy="92" r="5"/><circle cx="722" cy="92" r="5"/><circle cx="780" cy="92" r="5"/>
+              </g>
+              <text x="8" y="116" fill="#7a8494" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">0</text>
+              <text x="760" y="116" fill="#7a8494" style="font-size:10px;font-family:'JetBrains Mono';font-weight:500;">1124</text>
+            </svg>
+            <div class="route-roadbook">
+              <span>035 JAIZKIBEL</span>
+              <span>240 LARRAU</span>
+              <span>360 AUBISQUE</span>
+              <span>430 TOURMALET</span>
+              <span>510 PEYRESOURDE</span>
+              <span>615 PORTILHON</span>
+              <span>760 BONAIGUA</span>
+              <span>880 CANTÓ</span>
+              <span>930 TRAVA</span>
+              <span>970 PRADELL</span>
+              <span>1030 ARES</span>
+              <span>1124 LLANCA</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -321,7 +472,16 @@ Coll d'Ares</div>
         visual_title: "Final jersey reference",
         visual_desc: "Approved production reference. Same base design for all riders, changing only the rider name above the rear pockets.",
         route_line_title: "Route line preview",
-        route_line_desc: "This path line is a key visual element of the jersey and represents the Transpyrenees crossing.",
+        route_line_desc: "Four display approaches to compare legibility on the jersey: some only with names, others with km and overall stats.",
+        route_option_recommended: "Recommended",
+        route_option_a_title: "Option A · Names on line",
+        route_option_a_desc: "Cleanest version for the jersey itself. The route keeps all named ports but avoids km data on the curve.",
+        route_option_b_title: "Option B · Names + km chips",
+        route_option_b_desc: "The line stays clean and the full km references move to compact chips below.",
+        route_option_c_title: "Option C · Hero passes + totals",
+        route_option_c_desc: "Editorial approach: only the most iconic climbs on the line, plus the global route stats.",
+        route_option_d_title: "Option D · Roadbook strip",
+        route_option_d_desc: "A navigation-inspired layout with a simple line and a compact checkpoint sequence underneath.",
         card_concept_title: "Visual direction",
         card_concept_subtitle: "Design DNA",
         concept_1: "Modern outdoor cartography",
@@ -361,7 +521,16 @@ Coll d'Ares</div>
         visual_title: "Referencia final del maillot",
         visual_desc: "Referencia aprobada para produccion. Misma base para todos los maillots, cambiando solo el nombre del rider sobre los bolsillos traseros.",
         route_line_title: "Previsualizacion de la linea de ruta",
-        route_line_desc: "Esta linea es un elemento clave del maillot y representa el recorrido Transpyrenees.",
+        route_line_desc: "Cuatro enfoques para comparar legibilidad en el maillot: algunos solo con nombres y otros con km y estadisticas globales.",
+        route_option_recommended: "Recomendada",
+        route_option_a_title: "Opcion A · Nombres sobre la linea",
+        route_option_a_desc: "La version mas limpia para el propio maillot. Mantiene todos los puertos nombrados sin cargar la curva con km.",
+        route_option_b_title: "Opcion B · Nombres + chips de km",
+        route_option_b_desc: "La linea se mantiene limpia y las referencias completas de km bajan a chips compactos.",
+        route_option_c_title: "Opcion C · Puertos iconicos + totales",
+        route_option_c_desc: "Enfoque editorial: solo las subidas mas iconicas sobre la linea, con las estadisticas globales de la ruta.",
+        route_option_d_title: "Opcion D · Tira roadbook",
+        route_option_d_desc: "Un layout inspirado en navegacion, con linea simple y secuencia compacta de checkpoints debajo.",
         card_concept_title: "Direccion visual",
         card_concept_subtitle: "ADN del diseno",
         concept_1: "Cartografia outdoor moderna",
@@ -401,7 +570,16 @@ Coll d'Ares</div>
         visual_title: "Referencia final del maillot",
         visual_desc: "Referencia aprovada per a produccio. Mateixa base per a tots els maillots, canviant nomes el nom del rider damunt de les butxaques posteriors.",
         route_line_title: "Previsualitzacio de la linia de ruta",
-        route_line_desc: "Aquesta linia es un element clau del maillot i representa el recorregut Transpyrenees.",
+        route_line_desc: "Quatre enfocaments per comparar la llegibilitat al maillot: alguns nomes amb noms i altres amb km i estadistiques globals.",
+        route_option_recommended: "Recomanada",
+        route_option_a_title: "Opcio A · Noms sobre la linia",
+        route_option_a_desc: "La versio mes neta per al maillot. Manté tots els ports anomenats sense carregar la corba amb km.",
+        route_option_b_title: "Opcio B · Noms + xips de km",
+        route_option_b_desc: "La linia es manté neta i les referencies completes de km baixen a xips compactes.",
+        route_option_c_title: "Opcio C · Ports iconics + totals",
+        route_option_c_desc: "Enfocament editorial: nomes les pujades mes iconiques sobre la linia, amb les estadistiques globals de la ruta.",
+        route_option_d_title: "Opcio D · Tira roadbook",
+        route_option_d_desc: "Un layout inspirat en navegacio, amb linia simple i sequencia compacta de checkpoints baix.",
         card_concept_title: "Direccio visual",
         card_concept_subtitle: "ADN del disseny",
         concept_1: "Cartografia outdoor moderna",
