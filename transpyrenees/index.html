@@ -111,8 +111,8 @@
       margin-bottom: 10px;
     }
     .route-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 12px;
     }
     .route-option {
@@ -120,6 +120,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       padding: 14px;
+      width: 100%;
     }
     .route-option.recommended {
       border-color: rgba(212, 168, 75, 0.28);
