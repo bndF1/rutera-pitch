@@ -439,6 +439,37 @@
             font-size: 11px; color: var(--muted); line-height: 1.6;
         }
 
+        /* ─── PORTS LIST ──────────────────────────────────────── */
+        .ports-panel {
+            margin-top: 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 24px;
+        }
+
+        .ports-copy-label {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .ports-copy {
+            width: 100%;
+            min-height: 220px;
+            padding: 14px;
+            border: 1px solid rgba(212,168,75,0.2);
+            background: var(--surface-2);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            resize: vertical;
+        }
+
         /* ─── FOOTER ─────────────────────────────────────────── */
         .footer {
             border-top: 1px solid var(--border);
@@ -782,6 +813,39 @@
 </section>
 
 
+<!-- ═══════════════ PORTS LIST ══════════════════════════════════ -->
+<section class="wrap">
+    <div class="label" data-i18n="ports.label">Ports List</div>
+    <h2 class="h2" data-i18n-html="ports.h2">Transpyrenees ports list<br>ready to copy/paste.</h2>
+    <p class="lead" data-i18n="ports.lead">Compact list for design work. You can select all and copy directly from the box.</p>
+
+    <div class="ports-panel">
+        <label class="ports-copy-label" for="ports-list" data-i18n="ports.copyLabel">Ports (copy/paste)</label>
+        <textarea id="ports-list" class="ports-copy" readonly spellcheck="false">Jaizkibel
+Ibardin
+Lizunaga
+Inzulegi
+Izpegi
+Arnostegi
+Ahusquy
+Larrau
+Pierre Saint-Martin
+Marie Blanque
+Aubisque
+Tentes
+Tourmalet
+Peyresourde
+Portilhon
+Varradòs
+Bonaigua
+Port del Cantó
+Coll de la Trava
+Coll de Pradell
+Coll d'Ares</textarea>
+    </div>
+</section>
+
+
 <!-- ═══════════════ FOOTER ══════════════════════════════════════ -->
 <footer class="footer">
     <span class="footer-logo" data-i18n="footer.logo">Rutera</span>
@@ -866,6 +930,10 @@ const translations = {
     "replacement.after6": "<span class=\"check\">✓</span> Services: shops, water, mechanics, ATMs",
     "replacement.after7": "<span class=\"check\">✓</span> Offline maps + GPS navigation",
     "replacement.after8": "<span class=\"check\">✓</span> Community conditions + local tips",
+    "ports.label": "Ports List",
+    "ports.h2": "Transpyrenees ports list<br>ready to copy/paste.",
+    "ports.lead": "Compact list for design work. You can select all and copy directly from the box.",
+    "ports.copyLabel": "Ports (copy/paste)",
     "roadmap.label": "Roadmap",
     "roadmap.h2": "Built in phases.<br>Starting with Spain.",
     "roadmap.phase0.num": "PHASE 0",
@@ -963,6 +1031,10 @@ const translations = {
     "replacement.after6": "<span class=\"check\">✓</span> Servicios: tiendas, agua, mecánicos, cajeros",
     "replacement.after7": "<span class=\"check\">✓</span> Mapas offline + navegación GPS",
     "replacement.after8": "<span class=\"check\">✓</span> Estado de la ruta + consejos locales",
+    "ports.label": "Listado de Puertos",
+    "ports.h2": "Listado de puertos Transpyrenees<br>listo para copiar y pegar.",
+    "ports.lead": "Listado compacto para diseño. Puedes seleccionar todo y copiarlo directamente de la caja.",
+    "ports.copyLabel": "Puertos (copiar/pegar)",
     "roadmap.label": "Hoja de Ruta",
     "roadmap.h2": "Construida por fases.<br>Empezando por España.",
     "roadmap.phase0.num": "PHASE 0",
@@ -1060,6 +1132,10 @@ const translations = {
     "replacement.after6": "<span class=\"check\">✓</span> Serveis: botigues, aigua, mecànics, caixers",
     "replacement.after7": "<span class=\"check\">✓</span> Mapes offline + navegació GPS",
     "replacement.after8": "<span class=\"check\">✓</span> Estat de la ruta + consells locals",
+    "ports.label": "Llistat de Ports",
+    "ports.h2": "Llistat de ports Transpyrenees<br>llest per a copiar i apegar.",
+    "ports.lead": "Llistat compacte per a disseny. Pots seleccionar-ho tot i copiar-ho directament de la caixa.",
+    "ports.copyLabel": "Ports (copiar/apegar)",
     "roadmap.label": "Full de Ruta",
     "roadmap.h2": "Construïda per fases.<br>Començant per Espanya.",
     "roadmap.phase0.num": "PHASE 0",
